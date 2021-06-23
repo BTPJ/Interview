@@ -1,3 +1,4 @@
 rootProject.name = "Interview"
 include ':app'
 include ':MvcMvpMvvm'
+include ':lib_base'

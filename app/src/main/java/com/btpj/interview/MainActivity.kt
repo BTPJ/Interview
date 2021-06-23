@@ -3,6 +3,8 @@ package com.btpj.interview
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.btpj.lib_base.base.BaseActivity
+import com.btpj.lib_base.utils.StatusBarUtil
 //import com.alibaba.android.arouter.launcher.ARouter
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -11,14 +13,9 @@ import kotlinx.android.synthetic.main.activity_main.*
  *
  * @author LTP 2021/6/21
  */
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        init()
-    }
+class MainActivity : BaseActivity(R.layout.activity_main) {
 
-    private fun init() {
+    override fun setupViews() {
         // Handler
         btn_handler.setOnClickListener {
 //            startActivity(HandlerActivity.newIntent(this))

@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".mvc.MvcActivity">
 
+    <com.btpj.lib_base.widgets.TitleLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleBackgroundColor="?attr/colorPrimary"
+        app:titleText="MVC/MVP模式" />
+
     <EditText
         android:id="@+id/et_name"
         android:layout_width="match_parent"
@@ -16,7 +24,7 @@
         android:hint="请输入用户名"
         android:importantForAutofill="no"
         android:inputType="text"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/titleLayout" />
 
     <EditText
         android:id="@+id/et_password"

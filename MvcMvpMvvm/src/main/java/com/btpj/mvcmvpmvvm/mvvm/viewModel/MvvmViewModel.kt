@@ -2,6 +2,7 @@ package com.btpj.mvcmvpmvvm.mvvm.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.btpj.lib_base.base.BaseViewModel
 import com.btpj.mvcmvpmvvm.mvvm.model.Model
 import com.btpj.mvcmvpmvvm.mvvm.model.bean.LoginResult
 
@@ -10,7 +11,7 @@ import com.btpj.mvcmvpmvvm.mvvm.model.bean.LoginResult
  *
  * @author LTP 2021/6/22
  */
-class MvvmViewModel : ViewModel() {
+class MvvmViewModel : BaseViewModel() {
 
     val userName = MutableLiveData("")
     val password = MutableLiveData("")
@@ -22,4 +23,6 @@ class MvvmViewModel : ViewModel() {
     fun login() {
         loginResult.value = mModel.login(userName.value!!, password.value!!)
     }
+
+    override fun start() {}
 }

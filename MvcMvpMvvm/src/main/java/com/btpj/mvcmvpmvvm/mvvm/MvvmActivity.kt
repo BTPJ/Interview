@@ -1,9 +1,6 @@
 package com.btpj.mvcmvpmvvm.mvvm
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import androidx.activity.viewModels
-import androidx.databinding.DataBindingUtil
+import com.btpj.lib_base.base.BaseVMBActivity
 import com.btpj.mvcmvpmvvm.R
 import com.btpj.mvcmvpmvvm.databinding.ActivityMvvmBinding
 import com.btpj.mvcmvpmvvm.mvvm.viewModel.MvvmViewModel
@@ -15,14 +12,9 @@ import com.btpj.mvcmvpmvvm.mvvm.viewModel.MvvmViewModel
  *
  * @author LTP 2021/6/22
  */
-class MvvmActivity : AppCompatActivity() {
-    private lateinit var mBinding: ActivityMvvmBinding
-    private val mViewModel: MvvmViewModel by viewModels()
+class MvvmActivity : BaseVMBActivity<MvvmViewModel, ActivityMvvmBinding>(R.layout.activity_mvvm) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_mvvm)
+    override fun setupVMBViews() {
         mBinding.viewModel = mViewModel
-        mBinding.lifecycleOwner = this
     }
 }
