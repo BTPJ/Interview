@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
+import com.btpj.lib_base.BR
 import java.lang.reflect.ParameterizedType
 
 abstract class BaseVMBActivity<VM : BaseViewModel, B : ViewDataBinding>(private val contentViewResId: Int) :
@@ -36,6 +37,7 @@ abstract class BaseVMBActivity<VM : BaseViewModel, B : ViewDataBinding>(private 
     private fun setupDataBinding() {
         mBinding = DataBindingUtil.setContentView(this, contentViewResId)
         mBinding.lifecycleOwner = this
+        mBinding.setVariable(BR.viewModel, mViewModel)
     }
 
     /** 提供编写LiveData监听逻辑的方法 */

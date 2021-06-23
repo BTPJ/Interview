@@ -14,7 +14,5 @@ import com.btpj.mvcmvpmvvm.mvvm.viewModel.MvvmViewModel
  */
 class MvvmActivity : BaseVMBActivity<MvvmViewModel, ActivityMvvmBinding>(R.layout.activity_mvvm) {
 
-    override fun setupVMBViews() {
-        mBinding.viewModel = mViewModel
-    }
+    override fun setupVMBViews() {}
 }
