@@ -10,8 +10,11 @@ import kotlinx.android.synthetic.main.activity_mvc.*
 
 /**
  * mvp模式
- * 优点：将业务逻辑写进了Presenter层中，解决了MVC中Controller与View过度耦合的缺点，使得指责更清晰，进一步降低了耦合性，更易维护
- * 缺点：接口数量大，Presenter中包含大量的view与model间的手动同步逻辑，随着项目复杂度的提升越来越臃肿
+ * 将MVC中的Controller改成Presenter，Presenter通过接口的方式去调用View层进行视图更新，
+ * 解决了MVC中Activity/Fragment既充当Controller又充当了View耦合度高的问题
+ *
+ * 优点：将业务逻辑写进了Presenter层中，解决了MVC中Controller与View过度耦合的缺点，使得职责更清晰，进一步降低了耦合性，更易维护
+ * 缺点：Presenter中不仅包含了业务逻辑，还包含大量的view与model间的手动同步逻辑，随着项目复杂度的提升越来越臃肿
  *
  * @author LTP 2021/6/22
  */

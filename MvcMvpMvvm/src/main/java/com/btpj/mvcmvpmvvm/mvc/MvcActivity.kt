@@ -12,8 +12,8 @@ import kotlinx.android.synthetic.main.activity_mvc.*
 /**
  * MVC模式
  * 优点：一定程度上实现了view和model层的分离，降低了耦合性
- * 缺点：Activity/Fragment既充当了View层也充当了Controller层，后期随着逻辑变复杂项目变得很臃肿，
- *      view与Controller耦合性依旧很高，难以维护
+ * 缺点：Activity/Fragment既充当了View层也充当了Controller层，view与Controller耦合性依旧很高，
+ *      后期随着项目复杂度提升，Activity/Fragment也变得越来越臃肿，项目难以维护
  *
  * @author LTP 2021/6/21
  */

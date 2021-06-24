@@ -7,8 +7,9 @@ import com.btpj.mvcmvpmvvm.mvvm.viewModel.MvvmViewModel
 
 /**
  * MVVM模式
- * 优点：View和Model使用DataBinding来进行双向绑定，一方的改变都会影响另一方，开发者不用再去手动修改UI的数据。项目耦合更低
- * 缺点：DataBinding不排查问题
+ * view与model间的同步逻辑自动化了
+ * 优点：View和Model使用DataBinding来进行双向绑定，解决了Presenter中包含大量的手动同步model和view的逻辑，使项目耦合度更低，降低维护成本
+ * 缺点：视图绑定的申明写在view的模版当中，无法断点调试
  *
  * @author LTP 2021/6/22
  */
