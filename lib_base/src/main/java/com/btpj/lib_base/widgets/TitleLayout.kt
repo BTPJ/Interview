@@ -22,7 +22,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
     init {
         // 自定义TitleLayout的相关属性
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.TitleLayout)
-        val titleBackgroundColor = typedArray.getColor(R.styleable.TitleLayout_titleBackgroundColor, ContextCompat.getColor(context, R.color._4cd2f5))
+        val titleBackgroundColor = typedArray.getColor(R.styleable.TitleLayout_titleBackgroundColor, ContextCompat.getColor(context, R.color._6200EE))
         val backIconRes = typedArray.getResourceId(R.styleable.TitleLayout_backIconRes, R.drawable.btn_back)
         val isShowBack = typedArray.getBoolean(R.styleable.TitleLayout_isShowBack, true)
         val titleTextColor = typedArray.getColor(R.styleable.TitleLayout_titleTextColor, ContextCompat.getColor(context, R.color._ffffff))

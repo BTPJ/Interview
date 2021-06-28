@@ -17,7 +17,7 @@
         android:id="@+id/cl_titleBar"
         android:layout_width="match_parent"
         android:layout_height="78dp"
-        android:background="@color/_4cd2f5"
+        android:background="@color/_6200EE"
         android:paddingTop="30dp">
 
         <ImageView

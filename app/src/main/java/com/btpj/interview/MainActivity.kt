@@ -18,7 +18,7 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
     override fun setupViews() {
         // Handler
         btn_handler.setOnClickListener {
-//             startActivity(Intent("com.btpj.mvcmvpmvvm.EVENT_DISPATCH"))
+             startActivity(Intent("com.btpj.handler.HANDLER"))
         }
 
         // 事件分发
