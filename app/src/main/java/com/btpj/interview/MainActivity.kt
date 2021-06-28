@@ -18,22 +18,20 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
     override fun setupViews() {
         // Handler
         btn_handler.setOnClickListener {
-//            startActivity(HandlerActivity.newIntent(this))
+//             startActivity(Intent("com.btpj.mvcmvpmvvm.EVENT_DISPATCH"))
         }
 
-        // 时间分发
+        // 事件分发
         btn_event.setOnClickListener {
-//            startActivity(EventActivity.newIntent(this))
+             startActivity(Intent("com.btpj.eventdispatch.EVENT_DISPATCH"))
         }
 
         // MVC、MVP、MVVM
         btn_mvc_mvp_mvvm.setOnClickListener {
             // 隐式启动
-            val intent = Intent()
-            //  intent.action = "com.btpj.mvcmvpmvvm.ACTION_MVC"
-            // intent.action = "com.btpj.mvcmvpmvvm.ACTION_MVP"
-            intent.action = "com.btpj.mvcmvpmvvm.ACTION_MVVM"
-            startActivity(intent)
+            startActivity(Intent("com.btpj.mvcmvpmvvm.ACTION_MVVM"))
+            // startActivity(Intent("com.btpj.mvcmvpmvvm.ACTION_MVP"))
+            // startActivity(Intent("com.btpj.mvcmvpmvvm.ACTION_MVC"))
 
             // Arouter
             //  ARouter.getInstance().build("/MvcMvpMvvm/mvc").navigation()
