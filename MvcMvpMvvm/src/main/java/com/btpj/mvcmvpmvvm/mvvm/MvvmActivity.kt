@@ -1,9 +1,11 @@
 package com.btpj.mvcmvpmvvm.mvvm
 
 import com.btpj.lib_base.base.BaseVMBActivity
+import com.btpj.lib_base.utils.LogUtil
 import com.btpj.mvcmvpmvvm.R
 import com.btpj.mvcmvpmvvm.databinding.ActivityMvvmBinding
 import com.btpj.mvcmvpmvvm.mvvm.viewModel.MvvmViewModel
+import java.util.*
 
 /**
  * MVVM模式

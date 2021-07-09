@@ -2,6 +2,7 @@ package com.btpj.handler
 
 import android.app.Activity
 import android.os.Handler
+import android.os.HandlerThread
 import android.os.Looper
 import android.os.Message
 import com.btpj.lib_base.base.BaseActivity
@@ -37,6 +38,10 @@ class HandlerActivity : BaseActivity(R.layout.activity_handler) {
 //            MyThread().start()
             MyThread2().start()
         }
+
+        // 这里调用looper.quit释放MyThread2，quit会回收消息并调用nativeWake,nativeWake会唤醒nativePollOnce
+        // 从而判断message==null退出消息循环
+        btn_quit.setOnClickListener { myLooper.quit() }
     }
 
     private fun startWork() {
@@ -61,21 +66,24 @@ class HandlerActivity : BaseActivity(R.layout.activity_handler) {
         }
     }
 
+    private lateinit var myLooper: Looper
+
     inner class MyThread2 : Thread() {
         override fun run() {
             super.run()
             Looper.prepare()
-            val myLooper = Looper.myLooper()!!
+            myLooper = Looper.myLooper()!!
             val threadHandler = MyHandler(WeakReference(this@HandlerActivity), myLooper)
             val obtainMessage = threadHandler.obtainMessage(3, "子线程中的handler向子线程的Looper发消息")
             threadHandler.sendMessage(obtainMessage)
             Looper.loop()
+            LogUtil.d("MyThread2执行完毕")
         }
     }
 
 //    override fun onDestroy() {
 //        super.onDestroy()
-    // 这里也可以使用removeCallbacksAndMessages取消message的监听防止内存泄漏
+//     // 这里也可以使用removeCallbacksAndMessages取消handler对message的监听（message.recycleUnchecked）防止内存泄漏
 //        mHandler.removeCallbacksAndMessages(null)
 //    }
 }

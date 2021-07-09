@@ -5,4 +5,4 @@ package com.btpj.mvcmvpmvvm.mvvm.model.bean
  *
  * @author LTP 2021/6/21
  */
-data class LoginResult(val success: Boolean, val msg: String = "")
+data class LoginResult(val success: Boolean, var msg: String = "")
