@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Interview">
         <activity android:name=".HandlerActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
             <intent-filter>
                 <action android:name="com.btpj.handler.HANDLER" />
                 <category android:name="android.intent.category.DEFAULT" />

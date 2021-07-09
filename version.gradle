@@ -3,7 +3,7 @@
  * 当前文件需要在全局的build.gradle文件中进行引用
  */
 ext {
-    /**定义各模块是当作application还是module*/
+    /**定义各模块是当作application还是lib*/
     isApplication = false
 
     /** Android 基本配置项 */

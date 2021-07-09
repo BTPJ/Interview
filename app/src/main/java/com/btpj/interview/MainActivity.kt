@@ -1,10 +1,7 @@
 package com.btpj.interview
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import com.btpj.lib_base.base.BaseActivity
-import com.btpj.lib_base.utils.StatusBarUtil
 //import com.alibaba.android.arouter.launcher.ARouter
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -16,14 +13,17 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : BaseActivity(R.layout.activity_main) {
 
     override fun setupViews() {
+        // Activity
+        btn_activity.setOnClickListener { startActivity(Intent("com.btpj.activity.ORIENTATION")) }
+
         // Handler
         btn_handler.setOnClickListener {
-             startActivity(Intent("com.btpj.handler.HANDLER"))
+            startActivity(Intent("com.btpj.handler.HANDLER"))
         }
 
         // 事件分发
         btn_event.setOnClickListener {
-             startActivity(Intent("com.btpj.eventdispatch.EVENT_DISPATCH"))
+            startActivity(Intent("com.btpj.eventdispatch.EVENT_DISPATCH"))
         }
 
         // MVC、MVP、MVVM
@@ -33,7 +33,7 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
             // startActivity(Intent("com.btpj.mvcmvpmvvm.ACTION_MVP"))
             // startActivity(Intent("com.btpj.mvcmvpmvvm.ACTION_MVC"))
 
-            // Arouter
+            // Arouter（此处暂时不兼容AndroidX故暂时直接使用隐式启动）
             //  ARouter.getInstance().build("/MvcMvpMvvm/mvc").navigation()
         }
     }

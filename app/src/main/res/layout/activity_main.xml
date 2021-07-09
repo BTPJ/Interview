@@ -25,11 +25,22 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/btn_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Activity相关"
+                android:textAllCaps="false"
+                tools:ignore="HardcodedText" />
+
+            <Button
                 android:id="@+id/btn_handler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:text="Handler机制"
                 android:textAllCaps="false"
@@ -39,8 +50,8 @@
                 android:id="@+id/btn_event"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:text="事件分发"
                 android:textAllCaps="false"
@@ -50,14 +61,13 @@
                 android:id="@+id/btn_mvc_mvp_mvvm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:text="MVC_MVP_MVVM"
                 android:textAllCaps="false"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
-
     </ScrollView>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
