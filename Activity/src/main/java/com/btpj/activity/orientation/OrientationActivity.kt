@@ -7,7 +7,7 @@ import com.btpj.lib_base.utils.LogUtil
 
 /**
  * Manifests中设Activity置android:configChanges="orientation"查看生命周期的变化
- * 网上答案千奇百怪，亲测Android11是以下结果：
+ *    网上答案千奇百怪，亲测Android11是以下结果：
  * 1、不设置Activity的android:configChanges时或者设置android:configChanges="orientation"
  *    或android:configChanges=orientation|keyboardHidden（**Android4.0以后无效**）都跟不设置一样，
  *    切屏都会重新重新创建Activity进而重新回调各个生命周期

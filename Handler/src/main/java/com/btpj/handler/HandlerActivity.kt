@@ -2,7 +2,6 @@ package com.btpj.handler
 
 import android.app.Activity
 import android.os.Handler
-import android.os.HandlerThread
 import android.os.Looper
 import android.os.Message
 import com.btpj.lib_base.base.BaseActivity
@@ -21,6 +20,7 @@ class HandlerActivity : BaseActivity(R.layout.activity_handler) {
     class MyHandler(private val activityReference: WeakReference<Activity>, looper: Looper) :
         Handler(looper) {
 
+        /** 这个回调具体执行的线程取决于handler初始化时与handler绑定的looper所在的线程 */
         override fun handleMessage(msg: Message) {
             super.handleMessage(msg)
             LogUtil.d("当前线程名：${Thread.currentThread().name}")
