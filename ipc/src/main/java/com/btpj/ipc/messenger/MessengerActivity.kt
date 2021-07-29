@@ -1,11 +1,13 @@
 package com.btpj.ipc.messenger
 
 import android.content.ComponentName
+import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
 import android.os.*
 import com.btpj.ipc.MyConstants
 import com.btpj.ipc.R
+import com.btpj.ipc.binder.BinderActivity
 import com.btpj.lib_base.base.BaseActivity
 import com.btpj.lib_base.utils.LogUtil
 
@@ -15,6 +17,13 @@ import com.btpj.lib_base.utils.LogUtil
  * @author LTP 2021/7/29
  */
 class MessengerActivity : BaseActivity(R.layout.activity_messenger) {
+
+    companion object {
+        /** 启动的Intent */
+        fun newIntent(context: Context): Intent {
+            return Intent(context, MessengerActivity::class.java)
+        }
+    }
 
     private val mReplyMessenger = Messenger(ReplyHandler())
 

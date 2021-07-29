@@ -9,28 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Interview">
-        <activity android:name=".messenger.MessengerActivity">
+        <activity android:name=".IPCActivity">
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
             <intent-filter>
-                <action android:name="com.btpj.ipc.MESSENGER" />
+                <action android:name="com.btpj.ipc.IPC" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".binder.BinderActivity">
-            <intent-filter>
-                <action android:name="com.btpj.ipc.BINDER" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".MainActivity" />
+        <activity android:name=".binder.BinderActivity" />
+        <activity android:name=".messenger.MessengerActivity" />
 
         <service
             android:name=".binder.BinderService"

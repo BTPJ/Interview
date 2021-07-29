@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".IPCActivity">
+
+    <com.btpj.lib_base.widgets.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleText="IPC通信" />
+
+    <Button
+        android:id="@+id/btn_binder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="单进程Activity利用Binder与Service通信"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btn_messenger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="多进程Messenger通信"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btn_aidl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="多进程AIDL通信"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>

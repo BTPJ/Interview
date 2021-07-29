@@ -28,8 +28,7 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
 
         // IPC通信
         btn_ipc.setOnClickListener {
-//            startActivity(Intent("com.btpj.ipc.BINDER"))
-            startActivity(Intent("com.btpj.ipc.MESSENGER"))
+            startActivity(Intent("com.btpj.ipc.IPC"))
         }
 
         // MVC、MVP、MVVM

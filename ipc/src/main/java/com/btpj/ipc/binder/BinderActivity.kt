@@ -16,6 +16,13 @@ import kotlinx.android.synthetic.main.activity_binder.*
  */
 class BinderActivity : BaseActivity(R.layout.activity_binder) {
 
+    companion object {
+        /** 启动的Intent */
+        fun newIntent(context: Context): Intent {
+            return Intent(context, BinderActivity::class.java)
+        }
+    }
+
     private lateinit var mBinder: BinderService.DownloadBinder
 
     private val mConnection = object : ServiceConnection {
