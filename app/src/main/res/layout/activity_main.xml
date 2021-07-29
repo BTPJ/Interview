@@ -58,6 +58,17 @@
                 tools:ignore="HardcodedText" />
 
             <Button
+                android:id="@+id/btn_ipc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="IPC通信"
+                android:textAllCaps="false"
+                tools:ignore="HardcodedText" />
+
+            <Button
                 android:id="@+id/btn_mvc_mvp_mvvm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

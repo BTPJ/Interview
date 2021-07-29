@@ -26,6 +26,12 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
             startActivity(Intent("com.btpj.eventdispatch.EVENT_DISPATCH"))
         }
 
+        // IPC通信
+        btn_ipc.setOnClickListener {
+//            startActivity(Intent("com.btpj.ipc.BINDER"))
+            startActivity(Intent("com.btpj.ipc.MESSENGER"))
+        }
+
         // MVC、MVP、MVVM
         btn_mvc_mvp_mvvm.setOnClickListener {
             // 隐式启动
