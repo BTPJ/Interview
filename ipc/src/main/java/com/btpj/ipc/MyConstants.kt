@@ -7,4 +7,6 @@ object MyConstants {
 
     const val MSG_FROM_SERVER = 0
     const val MSG_FROM_CLIENT = 1
+
+    const val MSG_NEW_BOOK_RECEIVED = 2
 }

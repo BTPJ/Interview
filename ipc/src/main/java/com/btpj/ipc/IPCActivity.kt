@@ -1,5 +1,6 @@
 package com.btpj.ipc
 
+import com.btpj.ipc.aidl.AIDLActivity
 import com.btpj.ipc.binder.BinderActivity
 import com.btpj.ipc.messenger.MessengerActivity
 import com.btpj.lib_base.base.BaseActivity
@@ -15,5 +16,6 @@ class IPCActivity : BaseActivity(R.layout.activity_ipc) {
     override fun setupViews() {
         btn_binder.setOnClickListener { startActivity(BinderActivity.newIntent(this)) }
         btn_messenger.setOnClickListener { startActivity(MessengerActivity.newIntent(this)) }
+        btn_aidl.setOnClickListener { startActivity(AIDLActivity.newIntent(this)) }
     }
 }
