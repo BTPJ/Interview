@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Interview">
-        <activity android:name=".aidl.AIDLActivity"></activity>
+        <service
+            android:name=".binder_pool.BinderPoolService"
+            android:enabled="false"
+            android:exported="false"></service>
+
+        <activity android:name=".aidl.AIDLActivity" />
         <activity android:name=".IPCActivity">
 
             <!-- <intent-filter> -->

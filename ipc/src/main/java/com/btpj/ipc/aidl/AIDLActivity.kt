@@ -16,6 +16,14 @@ import com.btpj.lib_base.utils.LogUtil
 import kotlinx.android.synthetic.main.activity_aidl.*
 import java.lang.ref.WeakReference
 
+/**
+ * 使用AIDL进行进程间通信
+ * 1、创建Service和AIDL接口
+ * 2、在Service中创建一个继承AIDL中的Sub类并实现其抽象方法的对象，并在onBind方法中返回该对象
+ * 3、在客户端绑定服务传入ServiceConnection的实现类，在onServiceConnected回调方法中即可获取服务进程的数据
+ *
+ * @author LTP 2021/7/30
+ */
 class AIDLActivity : BaseActivity(R.layout.activity_aidl) {
 
     private lateinit var mBookManager: IBookManager
