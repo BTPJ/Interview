@@ -9,10 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Interview">
-        <service
-            android:name=".binder_pool.BinderPoolService"
-            android:enabled="false"
-            android:exported="false"></service>
+        <activity
+            android:name=".binder_pool.BinderPoolActivity"
+            android:exported="true" />
 
         <activity android:name=".aidl.AIDLActivity" />
         <activity android:name=".IPCActivity">
@@ -42,6 +41,12 @@
         <service
             android:name=".aidl.BookManagerService"
             android:process=":remote2" />
+
+        <service
+            android:name=".binder_pool.BinderPoolService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":remote3" />
     </application>
 
 </manifest>

@@ -36,4 +36,12 @@
         android:text="多进程AIDL通信"
         tools:ignore="HardcodedText" />
 
+    <Button
+        android:id="@+id/btn_aidlPool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Binder线程池"
+        tools:ignore="HardcodedText" />
+
 </LinearLayout>
