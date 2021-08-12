@@ -9,30 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Interview">
-        <activity android:name=".mvc.MvcActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+        <activity android:name=".StructureActivity">
             <intent-filter>
-                <action android:name="com.btpj.mvcmvpmvvm.ACTION_MVC" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".mvp.view.MvpActivity">
-            <intent-filter>
-                <action android:name="com.btpj.mvcmvpmvvm.ACTION_MVP" />
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mvvm.MvvmActivity">
-            <intent-filter>
-                <action android:name="com.btpj.mvcmvpmvvm.ACTION_MVVM" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".mvc.MvcActivity" />
+        <activity android:name=".mvp.view.MvpActivity" />
+        <activity android:name=".mvvm.MvvmActivity" />
     </application>
 
 </manifest>

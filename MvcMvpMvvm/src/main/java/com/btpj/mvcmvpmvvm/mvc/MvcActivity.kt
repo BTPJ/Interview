@@ -1,11 +1,14 @@
 package com.btpj.mvcmvpmvvm.mvc
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.btpj.lib_base.base.BaseActivity
 //import com.alibaba.android.arouter.facade.annotation.Route
 import com.btpj.mvcmvpmvvm.R
+import com.btpj.mvcmvpmvvm.StructureActivity
 import com.btpj.mvcmvpmvvm.mvc.model.Model
 import kotlinx.android.synthetic.main.activity_mvc.*
 
@@ -21,6 +24,12 @@ import kotlinx.android.synthetic.main.activity_mvc.*
 class MvcActivity : BaseActivity(R.layout.activity_mvc) {
 
     private val model: Model by lazy { Model() }
+
+    companion object {
+        fun newIntent(context: Context): Intent {
+            return Intent(context, MvcActivity::class.java)
+        }
+    }
 
     override fun setupViews() {
         btn_login.setOnClickListener { login() }

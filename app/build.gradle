@@ -36,9 +36,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
     buildFeatures {
         dataBinding true
     }
@@ -58,9 +60,13 @@ dependencies {
 //    kapt rootProject.ext.dependencies.arouterCompiler
 
     implementation project(':lib_base')
-    implementation project(':Activity')
-    implementation project(':Handler')
-    implementation project(':EventDispatch')
-    implementation project(':MvcMvpMvvm')
-    implementation project(':IPC')
+
+    if (!rootProject.ext.isApplication) {
+        // 加入判断，只有lib包才引入
+        implementation project(':Activity')
+        implementation project(':Handler')
+        implementation project(':EventDispatch')
+        implementation project(':MvcMvpMvvm')
+        implementation project(':IPC')
+    }
 }

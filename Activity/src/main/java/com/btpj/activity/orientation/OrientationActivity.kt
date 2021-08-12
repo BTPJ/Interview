@@ -1,9 +1,12 @@
 package com.btpj.activity.orientation
 
+import android.content.Context
+import android.content.Intent
 import android.content.res.Configuration
 import com.btpj.activity.R
 import com.btpj.lib_base.base.BaseActivity
 import com.btpj.lib_base.utils.LogUtil
+import kotlinx.android.synthetic.main.activity_orientation.*
 
 /**
  * Manifests中设Activity置android:configChanges="orientation"查看生命周期的变化
@@ -18,7 +21,18 @@ import com.btpj.lib_base.utils.LogUtil
  */
 class OrientationActivity : BaseActivity(R.layout.activity_orientation) {
 
+    companion object {
+        // 判断是否是作为Application的首页
+        private var isIndexPage = true
+
+        fun newIntent(context: Context): Intent {
+            isIndexPage = false
+            return Intent(context, OrientationActivity::class.java)
+        }
+    }
+
     override fun setupViews() {
+        titleLayout.setBackVisible(!isIndexPage)
         LogUtil.d("onCreate")
     }
 

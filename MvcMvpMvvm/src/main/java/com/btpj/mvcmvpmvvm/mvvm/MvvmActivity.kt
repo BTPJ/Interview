@@ -1,9 +1,12 @@
 package com.btpj.mvcmvpmvvm.mvvm
 
+import android.content.Context
+import android.content.Intent
 import com.btpj.lib_base.base.BaseVMBActivity
 import com.btpj.lib_base.utils.LogUtil
 import com.btpj.mvcmvpmvvm.R
 import com.btpj.mvcmvpmvvm.databinding.ActivityMvvmBinding
+import com.btpj.mvcmvpmvvm.mvc.MvcActivity
 import com.btpj.mvcmvpmvvm.mvvm.viewModel.MvvmViewModel
 import java.util.*
 
@@ -16,6 +19,12 @@ import java.util.*
  * @author LTP 2021/6/22
  */
 class MvvmActivity : BaseVMBActivity<MvvmViewModel, ActivityMvvmBinding>(R.layout.activity_mvvm) {
+
+    companion object {
+        fun newIntent(context: Context): Intent {
+            return Intent(context, MvvmActivity::class.java)
+        }
+    }
 
     override fun setupVMBViews() {}
 }

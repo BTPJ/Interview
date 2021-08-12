@@ -1,7 +1,11 @@
 package com.btpj.interview
 
-import android.content.Intent
+import com.btpj.activity.orientation.OrientationActivity
+import com.btpj.eventdispatch.EventDispatchActivity
+import com.btpj.handler.HandlerActivity
+import com.btpj.ipc.IPCActivity
 import com.btpj.lib_base.base.BaseActivity
+import com.btpj.mvcmvpmvvm.StructureActivity
 //import com.alibaba.android.arouter.launcher.ARouter
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -14,31 +18,29 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
 
     override fun setupViews() {
         // Activity
-        btn_activity.setOnClickListener { startActivity(Intent("com.btpj.activity.ORIENTATION")) }
+        btn_activity.setOnClickListener { startActivity(OrientationActivity.newIntent(this)) }
 
         // Handler
         btn_handler.setOnClickListener {
-            startActivity(Intent("com.btpj.handler.HANDLER"))
+            startActivity(HandlerActivity.newIntent(this))
         }
 
         // 事件分发
         btn_event.setOnClickListener {
-            startActivity(Intent("com.btpj.eventdispatch.EVENT_DISPATCH"))
+            startActivity(EventDispatchActivity.newIntent(this))
         }
 
         // IPC通信
         btn_ipc.setOnClickListener {
-            startActivity(Intent("com.btpj.ipc.IPC"))
+            startActivity(IPCActivity.newIntent(this))
         }
 
         // MVC、MVP、MVVM
         btn_mvc_mvp_mvvm.setOnClickListener {
             // 隐式启动
-            startActivity(Intent("com.btpj.mvcmvpmvvm.ACTION_MVVM"))
-            // startActivity(Intent("com.btpj.mvcmvpmvvm.ACTION_MVP"))
-            // startActivity(Intent("com.btpj.mvcmvpmvvm.ACTION_MVC"))
+            startActivity(StructureActivity.newIntent(this))
 
-            // Arouter（此处暂时不兼容AndroidX故暂时直接使用隐式启动）
+            // Arouter（此处暂时不兼容AndroidX）
             //  ARouter.getInstance().build("/MvcMvpMvvm/mvc").navigation()
         }
     }

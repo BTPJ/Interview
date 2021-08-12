@@ -1,6 +1,8 @@
 package com.btpj.eventdispatch
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.view.MotionEvent
 import com.btpj.lib_base.base.BaseActivity
 import com.btpj.lib_base.utils.LogUtil
@@ -13,8 +15,19 @@ import kotlinx.android.synthetic.main.activity_event_dispatch.*
  */
 class EventDispatchActivity : BaseActivity(R.layout.activity_event_dispatch) {
 
-    @SuppressLint("ClickableViewAccessibility")
+    companion object {
+        // 判断是否是作为Application的首页
+        private var isIndexPage = true
+
+        fun newIntent(context: Context): Intent {
+            isIndexPage = false
+            return Intent(context, EventDispatchActivity::class.java)
+        }
+    }
+
     override fun setupViews() {
+        titleLayout.setBackVisible(!isIndexPage)
+
 //     myView.setOnTouchListener { v, event ->
 //         LogUtil.w("MyView调用setOnTouchListener返回true")
 //         LogUtil.w(event.toString())

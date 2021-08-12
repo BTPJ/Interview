@@ -1,10 +1,13 @@
 package com.btpj.mvcmvpmvvm.mvp.view
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.btpj.lib_base.base.BaseActivity
 import com.btpj.mvcmvpmvvm.R
+import com.btpj.mvcmvpmvvm.mvc.MvcActivity
 import com.btpj.mvcmvpmvvm.mvp.presenter.MvpPresenter
 import kotlinx.android.synthetic.main.activity_mvc.*
 
@@ -21,6 +24,12 @@ import kotlinx.android.synthetic.main.activity_mvc.*
 class MvpActivity : BaseActivity(R.layout.activity_mvc), IView {
 
     private val mMvpPresenter: MvpPresenter by lazy { MvpPresenter(this) }
+
+    companion object {
+        fun newIntent(context: Context): Intent {
+            return Intent(context, MvpActivity::class.java)
+        }
+    }
 
     override fun setupViews() {
         btn_login.setOnClickListener {

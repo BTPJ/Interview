@@ -10,13 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Interview">
         <activity android:name=".EventDispatchActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
             <intent-filter>
-                <action android:name="com.btpj.eventdispatch.EVENT_DISPATCH" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>

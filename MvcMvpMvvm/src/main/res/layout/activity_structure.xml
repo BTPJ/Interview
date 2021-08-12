@@ -5,44 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".IPCActivity">
+    tools:context=".StructureActivity"
+    tools:ignore="MissingDefaultResource">
 
     <com.btpj.lib_base.widgets.TitleLayout
         android:id="@+id/titleLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:titleText="IPC通信" />
+        app:titleText="Android架构" />
 
     <Button
-        android:id="@+id/btn_binder"
+        android:id="@+id/btn_mvc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="单进程Activity利用Binder与Service通信"
+        android:text="MVC架构"
         tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/btn_messenger"
+        android:id="@+id/btn_mvp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="多进程Messenger通信"
+        android:text="MVP架构"
         tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/btn_aidl"
+        android:id="@+id/btn_mvvm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="多进程AIDL通信"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:id="@+id/btn_aidlPool"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Binder线程池"
+        android:text="MVVM架构"
         tools:ignore="HardcodedText" />
 
 </LinearLayout>

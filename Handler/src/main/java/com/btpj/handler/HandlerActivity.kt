@@ -1,6 +1,8 @@
 package com.btpj.handler
 
 import android.app.Activity
+import android.content.Context
+import android.content.Intent
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
@@ -15,6 +17,16 @@ import java.lang.ref.WeakReference
  * @author LTP 2021/6/28
  */
 class HandlerActivity : BaseActivity(R.layout.activity_handler) {
+
+    companion object {
+        // 判断是否是作为Application的首页
+        private var isIndexPage = true
+
+        fun newIntent(context: Context): Intent {
+            isIndexPage = false
+            return Intent(context, HandlerActivity::class.java)
+        }
+    }
 
     /**  采用静态内部类（kotlin默认内部类就是静态的） + 软引用避免handler造成的内存泄漏 */
     class MyHandler(private val activityReference: WeakReference<Activity>, looper: Looper) :
@@ -33,6 +45,7 @@ class HandlerActivity : BaseActivity(R.layout.activity_handler) {
     }
 
     override fun setupViews() {
+        titleLayout.setBackVisible(!isIndexPage)
         btn_start.setOnClickListener {
 //            startWork()
 //            MyThread().start()
