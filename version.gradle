@@ -4,7 +4,7 @@
  */
 ext {
     /**定义各模块是当作application还是module(组件)*/
-    isApplication = true
+    isApplication = false
 
     /** Android 基本配置项 */
     android = [
