@@ -45,7 +45,7 @@ class HandlerActivity : BaseActivity(R.layout.activity_handler) {
     }
 
     override fun setupViews() {
-        titleLayout.setBackVisible(!isIndexPage)
+//        titleLayout.setBackVisible(!isIndexPage)
         btn_start.setOnClickListener {
 //            startWork()
 //            MyThread().start()

@@ -37,7 +37,6 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
 
         // MVC、MVP、MVVM
         btn_mvc_mvp_mvvm.setOnClickListener {
-            // 隐式启动
             startActivity(StructureActivity.newIntent(this))
 
             // Arouter（此处暂时不兼容AndroidX）

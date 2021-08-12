@@ -61,12 +61,12 @@ dependencies {
 
     implementation project(':lib_base')
 
-    if (!rootProject.ext.isApplication) {
-        // 加入判断，只有lib包才引入
+//    if (!rootProject.ext.isApplication) {
+        // 加入判断，只有作为module包才引入
         implementation project(':Activity')
         implementation project(':Handler')
         implementation project(':EventDispatch')
         implementation project(':MvcMvpMvvm')
         implementation project(':IPC')
-    }
+//    }
 }
