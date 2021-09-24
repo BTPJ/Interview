@@ -4,6 +4,7 @@ import com.btpj.activity.orientation.OrientationActivity
 import com.btpj.eventdispatch.EventDispatchActivity
 import com.btpj.handler.HandlerActivity
 import com.btpj.ipc.IPCActivity
+import com.btpj.jetpack.JetpackActivity
 import com.btpj.lib_base.base.BaseActivity
 import com.btpj.mvcmvpmvvm.StructureActivity
 //import com.alibaba.android.arouter.launcher.ARouter
@@ -41,6 +42,11 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
 
             // Arouter（此处暂时不兼容AndroidX）
             //  ARouter.getInstance().build("/MvcMvpMvvm/mvc").navigation()
+        }
+
+        // Kotlin & 协程
+        btn_kotlin_jetpack.setOnClickListener {
+            startActivity(JetpackActivity.newIntent(this))
         }
     }
 }

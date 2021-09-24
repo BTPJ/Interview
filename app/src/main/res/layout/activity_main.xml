@@ -78,6 +78,17 @@
                 android:text="MVC_MVP_MVVM"
                 android:textAllCaps="false"
                 tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/btn_kotlin_jetpack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="kotlin &amp; jetpack"
+                android:textAllCaps="false"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
     </ScrollView>
 

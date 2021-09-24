@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".JetpackActivity">
+
+    <com.btpj.lib_base.widgets.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleText="Kotlin &amp; Jetpack"/>
+
+    <Button
+        android:id="@+id/btn_coroutines"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="协程取消"
+        android:layout_margin="10dp"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>
