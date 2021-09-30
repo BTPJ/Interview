@@ -3,14 +3,11 @@ package com.btpj.mvcmvpmvvm.mvc
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.btpj.lib_base.base.BaseActivity
-//import com.alibaba.android.arouter.facade.annotation.Route
+import android.widget.Button
+import com.btpj.lib_base.base.BaseBindingActivity
 import com.btpj.mvcmvpmvvm.R
-import com.btpj.mvcmvpmvvm.StructureActivity
+import com.btpj.mvcmvpmvvm.databinding.ActivityMvcBinding
 import com.btpj.mvcmvpmvvm.mvc.model.Model
-import kotlinx.android.synthetic.main.activity_mvc.*
 
 /**
  * MVC模式
@@ -21,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_mvc.*
  * @author LTP 2021/6/21
  */
 //@Route(path = "/MvcMvpMvvm/mvc")
-class MvcActivity : BaseActivity(R.layout.activity_mvc) {
+class MvcActivity : BaseBindingActivity<ActivityMvcBinding>(R.layout.activity_mvc) {
 
     private val model: Model by lazy { Model() }
 
@@ -32,17 +29,18 @@ class MvcActivity : BaseActivity(R.layout.activity_mvc) {
     }
 
     override fun setupViews() {
-        btn_login.setOnClickListener { login() }
+        findViewById<Button>(R.id.btn_login).setOnClickListener { login() }
     }
 
     /** 登录 */
     @SuppressLint("SetTextI18n")
     private fun login() {
-        val result = model.login(et_name.text.toString().trim(), et_password.text.toString().trim())
-        if (result.success) {
-            tv_result.text = "登录成功"
-        } else {
-            tv_result.text = "登录失败：${result.msg}"
+        val result = model.login(
+            mBinding.etName.text.toString().trim(),
+            mBinding.etPassword.text.toString().trim()
+        )
+        mBinding.tvResult.apply {
+            text = if (result.success) "登录成功" else "登录失败：${result.msg}"
         }
     }
 }

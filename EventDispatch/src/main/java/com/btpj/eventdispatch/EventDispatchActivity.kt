@@ -6,7 +6,7 @@ import android.content.Intent
 import android.view.MotionEvent
 import com.btpj.lib_base.base.BaseActivity
 import com.btpj.lib_base.utils.LogUtil
-import kotlinx.android.synthetic.main.activity_event_dispatch.*
+import com.btpj.lib_base.widgets.TitleLayout
 
 /**
  * Android事件分发
@@ -26,9 +26,9 @@ class EventDispatchActivity : BaseActivity(R.layout.activity_event_dispatch) {
     }
 
     override fun setupViews() {
-        titleLayout.setBackVisible(!isIndexPage)
+        findViewById<TitleLayout>(R.id.titleLayout).setBackVisible(!isIndexPage)
 
-//     myView.setOnTouchListener { v, event ->
+//     findViewById<View>(R.id.myView).setOnTouchListener { v, event ->
 //         LogUtil.w("MyView调用setOnTouchListener返回true")
 //         LogUtil.w(event.toString())
 //         return@setOnTouchListener true

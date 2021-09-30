@@ -1,33 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".coroutines.CoroutinesActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.btpj.lib_base.widgets.TitleLayout
+    <data>
+
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:titleText="取消协程" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".coroutines.CoroutinesActivity">
 
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:text="启动协程"
-        tools:ignore="HardcodedText" />
+        <com.btpj.lib_base.widgets.TitleLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleText="取消协程" />
 
-    <Button
-        android:id="@+id/btn_cancel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:text="取消协程"
-        tools:ignore="HardcodedText" />
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:text="启动协程"
+            tools:ignore="HardcodedText" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:text="取消协程"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+</layout>

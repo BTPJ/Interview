@@ -6,9 +6,10 @@ import android.content.Intent
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
+import android.widget.Button
+import android.widget.TextView
 import com.btpj.lib_base.base.BaseActivity
 import com.btpj.lib_base.utils.LogUtil
-import kotlinx.android.synthetic.main.activity_handler.*
 import java.lang.ref.WeakReference
 
 /**
@@ -38,7 +39,8 @@ class HandlerActivity : BaseActivity(R.layout.activity_handler) {
             LogUtil.d("当前线程名：${Thread.currentThread().name}")
             // 这里的线程是否是主线程取决于与handler绑定的looper所在的线程
             when (msg.what) {
-                1, 2 -> activityReference.get()?.tv_time?.text = msg.obj.toString()
+                1, 2 -> activityReference.get()?.findViewById<TextView>(R.id.tv_time)?.text =
+                    msg.obj.toString()
                 3 -> LogUtil.d(msg.obj.toString()) // 这里由于是向子线程looper发的消息所以当前线程为子线程，无法更新UI
             }
         }
@@ -46,7 +48,7 @@ class HandlerActivity : BaseActivity(R.layout.activity_handler) {
 
     override fun setupViews() {
 //        titleLayout.setBackVisible(!isIndexPage)
-        btn_start.setOnClickListener {
+        findViewById<Button>(R.id.btn_start).setOnClickListener {
 //            startWork()
 //            MyThread().start()
             MyThread2().start()
@@ -54,7 +56,7 @@ class HandlerActivity : BaseActivity(R.layout.activity_handler) {
 
         // 这里调用looper.quit释放MyThread2，quit会回收消息并调用nativeWake,nativeWake会唤醒nativePollOnce
         // 从而判断message==null退出消息循环
-        btn_quit.setOnClickListener { myLooper.quit() }
+        findViewById<Button>(R.id.btn_quit).setOnClickListener { myLooper.quit() }
     }
 
     private fun startWork() {

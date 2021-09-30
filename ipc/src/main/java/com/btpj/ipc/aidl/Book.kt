@@ -1,7 +1,7 @@
 package com.btpj.ipc.aidl
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 /**
  * @author LTP  2021/7/29

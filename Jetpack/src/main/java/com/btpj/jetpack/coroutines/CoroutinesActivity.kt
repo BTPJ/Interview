@@ -3,9 +3,9 @@ package com.btpj.jetpack.coroutines
 import android.content.Context
 import android.content.Intent
 import com.btpj.jetpack.R
-import com.btpj.lib_base.base.BaseActivity
+import com.btpj.jetpack.databinding.ActivityCoroutinesBinding
+import com.btpj.lib_base.base.BaseBindingActivity
 import com.btpj.lib_base.utils.LogUtil
-import kotlinx.android.synthetic.main.activity_coroutines.*
 import kotlinx.coroutines.*
 
 /**
@@ -13,7 +13,8 @@ import kotlinx.coroutines.*
  *
  * @author LTP 2021/9/24
  */
-class CoroutinesActivity : BaseActivity(R.layout.activity_coroutines) {
+class CoroutinesActivity :
+    BaseBindingActivity<ActivityCoroutinesBinding>(R.layout.activity_coroutines) {
 
     private lateinit var mJob: Job
 
@@ -24,17 +25,19 @@ class CoroutinesActivity : BaseActivity(R.layout.activity_coroutines) {
     }
 
     override fun setupViews() {
-        btn_start.setOnClickListener {
-            mJob = GlobalScope.launch(Dispatchers.Main) {
-                repeat(100) {
-                    LogUtil.d("第${it + 1}次运行协程")
-                    delay(1000)
+        mBinding.apply {
+            btnStart.setOnClickListener {
+                mJob = GlobalScope.launch(Dispatchers.Main) {
+                    repeat(100) {
+                        LogUtil.d("第${it + 1}次运行协程")
+                        delay(1000)
+                    }
                 }
             }
-        }
 
-        btn_cancel.setOnClickListener {
-            mJob.cancel()
+            btnCancel.setOnClickListener {
+                mJob.cancel()
+            }
         }
     }
 }

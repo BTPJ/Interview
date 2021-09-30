@@ -2,14 +2,9 @@ package com.btpj.jetpack
 
 import android.content.Context
 import android.content.Intent
+import android.widget.Button
 import com.btpj.jetpack.coroutines.CoroutinesActivity
 import com.btpj.lib_base.base.BaseActivity
-import com.btpj.lib_base.utils.LogUtil
-import kotlinx.android.synthetic.main.activity_jetpack.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 /**
  * jetpack、kotlin相关
@@ -25,7 +20,7 @@ class JetpackActivity : BaseActivity(R.layout.activity_jetpack) {
     }
 
     override fun setupViews() {
-        btn_coroutines.setOnClickListener {
+        findViewById<Button>(R.id.btn_coroutines).setOnClickListener {
             startActivity(CoroutinesActivity.newIntent(this))
         }
     }

@@ -7,6 +7,11 @@ import androidx.lifecycle.ViewModelProvider
 import com.btpj.lib_base.BR
 import java.lang.reflect.ParameterizedType
 
+/**
+ * 集成ViewModel和DataBinding的基类Activity
+ *
+ * @author LTP 2021/9/30
+ */
 abstract class BaseVMBActivity<VM : BaseViewModel, B : ViewDataBinding>(private val contentViewResId: Int) :
     BaseActivity(contentViewResId) {
 

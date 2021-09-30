@@ -11,9 +11,9 @@ import android.os.Looper
 import android.os.Message
 import com.btpj.ipc.MyConstants
 import com.btpj.ipc.R
-import com.btpj.lib_base.base.BaseActivity
+import com.btpj.ipc.databinding.ActivityAidlBinding
+import com.btpj.lib_base.base.BaseBindingActivity
 import com.btpj.lib_base.utils.LogUtil
-import kotlinx.android.synthetic.main.activity_aidl.*
 import java.lang.ref.WeakReference
 
 /**
@@ -24,7 +24,7 @@ import java.lang.ref.WeakReference
  *
  * @author LTP 2021/7/30
  */
-class AIDLActivity : BaseActivity(R.layout.activity_aidl) {
+class AIDLActivity : BaseBindingActivity<ActivityAidlBinding>(R.layout.activity_aidl) {
 
     private lateinit var mBookManager: IBookManager
 
@@ -43,7 +43,7 @@ class AIDLActivity : BaseActivity(R.layout.activity_aidl) {
             super.handleMessage(msg)
             when (msg.what) {
                 MyConstants.MSG_NEW_BOOK_RECEIVED -> {
-                    activity.get()?.tv_result?.text = "到的新书：${msg.obj}"
+                    activity.get()?.mBinding?.tvResult?.text = "到的新书：${msg.obj}"
                     LogUtil.d("到的新书：${msg.obj}")
                 }
             }

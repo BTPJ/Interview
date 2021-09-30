@@ -6,15 +6,15 @@ import android.content.Intent
 import android.content.ServiceConnection
 import android.os.IBinder
 import com.btpj.ipc.R
-import com.btpj.lib_base.base.BaseActivity
-import kotlinx.android.synthetic.main.activity_binder.*
+import com.btpj.ipc.databinding.ActivityBinderBinding
+import com.btpj.lib_base.base.BaseBindingActivity
 
 /**
  * Activity与Service通信（同进程，跨进程会报错）
  *
  * @author LTP 2021/7/29
  */
-class BinderActivity : BaseActivity(R.layout.activity_binder) {
+class BinderActivity : BaseBindingActivity<ActivityBinderBinding>(R.layout.activity_binder) {
 
     companion object {
         /** 启动的Intent */
@@ -36,6 +36,8 @@ class BinderActivity : BaseActivity(R.layout.activity_binder) {
 
     override fun setupViews() {
         bindService(Intent(this, BinderService::class.java), mConnection, Context.BIND_AUTO_CREATE)
-        btn_getProgress.setOnClickListener { tv_progress.text = mBinder.getProgress().toString() }
+        mBinding.btnGetProgress.setOnClickListener {
+            mBinding.tvProgress.text = mBinder.getProgress().toString()
+        }
     }
 }

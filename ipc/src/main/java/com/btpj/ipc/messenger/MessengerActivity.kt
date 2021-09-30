@@ -7,7 +7,6 @@ import android.content.ServiceConnection
 import android.os.*
 import com.btpj.ipc.MyConstants
 import com.btpj.ipc.R
-import com.btpj.ipc.binder.BinderActivity
 import com.btpj.lib_base.base.BaseActivity
 import com.btpj.lib_base.utils.LogUtil
 

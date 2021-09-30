@@ -4,9 +4,6 @@
     package="com.btpj.lib_base">
 
     <application>
-        <activity
-            android:name=".base.BaseActivity"
-            tools:ignore="Instantiatable" />
     </application>
 
 </manifest>

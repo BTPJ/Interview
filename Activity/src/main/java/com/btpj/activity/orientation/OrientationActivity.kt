@@ -6,7 +6,7 @@ import android.content.res.Configuration
 import com.btpj.activity.R
 import com.btpj.lib_base.base.BaseActivity
 import com.btpj.lib_base.utils.LogUtil
-import kotlinx.android.synthetic.main.activity_orientation.*
+import com.btpj.lib_base.widgets.TitleLayout
 
 /**
  * Manifests中设Activity置android:configChanges="orientation"查看生命周期的变化
@@ -32,7 +32,7 @@ class OrientationActivity : BaseActivity(R.layout.activity_orientation) {
     }
 
     override fun setupViews() {
-        titleLayout.setBackVisible(!isIndexPage)
+        findViewById<TitleLayout>(R.id.titleLayout).setBackVisible(!isIndexPage)
         LogUtil.d("onCreate")
     }
 

@@ -6,10 +6,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.btpj.lib_base.base.BaseActivity
+import com.btpj.lib_base.base.BaseBindingActivity
 import com.btpj.mvcmvpmvvm.R
+import com.btpj.mvcmvpmvvm.databinding.ActivityMvcBinding
 import com.btpj.mvcmvpmvvm.mvc.MvcActivity
 import com.btpj.mvcmvpmvvm.mvp.presenter.MvpPresenter
-import kotlinx.android.synthetic.main.activity_mvc.*
 
 /**
  * mvp模式
@@ -21,7 +22,7 @@ import kotlinx.android.synthetic.main.activity_mvc.*
  *
  * @author LTP 2021/6/22
  */
-class MvpActivity : BaseActivity(R.layout.activity_mvc), IView {
+class MvpActivity : BaseBindingActivity<ActivityMvcBinding>(R.layout.activity_mvc), IView {
 
     private val mMvpPresenter: MvpPresenter by lazy { MvpPresenter(this) }
 
@@ -32,20 +33,20 @@ class MvpActivity : BaseActivity(R.layout.activity_mvc), IView {
     }
 
     override fun setupViews() {
-        btn_login.setOnClickListener {
+        mBinding.btnLogin.setOnClickListener {
             mMvpPresenter.login(
-                et_name.text.toString().trim(),
-                et_password.text.toString().trim()
+                mBinding.etName.text.toString().trim(),
+                mBinding.etPassword.text.toString().trim()
             )
         }
     }
 
     override fun showSuccessView() {
-        tv_result.text = "登录成功"
+        mBinding.tvResult.text = "登录成功"
     }
 
     @SuppressLint("SetTextI18n")
     override fun showFailedView(errorMsg: String) {
-        tv_result.text = "登录失败：$errorMsg"
+        mBinding.tvResult.text = "登录失败：$errorMsg"
     }
 }
