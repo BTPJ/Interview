@@ -1,3 +1,6 @@
+import com.btpj.dependencies.Versions
+import com.btpj.dependencies.Deps
+
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
@@ -6,15 +9,15 @@ plugins {
 }
 
 android {
-    compileSdkVersion rootProject.ext.android.compileSdkVersion
-    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    compileSdkVersion Versions.compileSdkVersion
+    buildToolsVersion Versions.buildToolsVersion
 
     defaultConfig {
         applicationId "com.btpj.interview"
-        minSdkVersion rootProject.ext.android.minSdkVersion
-        targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode rootProject.ext.android.versionCode
-        versionName rootProject.ext.android.versionName
+        minSdkVersion Versions.minSdkVersion
+        targetSdkVersion Versions.targetSdkVersion
+        versionCode Versions.versionCode
+        versionName Versions.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -48,20 +51,20 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation rootProject.ext.dependencies.coreKtx
-    implementation rootProject.ext.dependencies.appcompat
-    implementation rootProject.ext.dependencies.material
-    implementation rootProject.ext.dependencies.constraintlayout
-    testImplementation rootProject.ext.dependencies.junit
-    androidTestImplementation rootProject.ext.dependencies.junitExt
-    androidTestImplementation rootProject.ext.dependencies.espresso
+    implementation Deps.coreKtx
+    implementation Deps.appcompat
+    implementation Deps.material
+    implementation Deps.constraintlayout
+    testImplementation Deps.junit
+    androidTestImplementation Deps.junitExt
+    androidTestImplementation Deps.espresso
 
-//    implementation rootProject.ext.dependencies.arouterApi
-//    kapt rootProject.ext.dependencies.arouterCompiler
+//    implementation Deps.arouterApi
+//    kapt Deps.arouterCompiler
 
     implementation project(':lib_base')
 
-    if (!rootProject.ext.isApplication) {
+    if (!Deps.isApplication) {
         // 加入判断，只有作为module包才引入
         implementation project(':Activity')
         implementation project(':Handler')

@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/LeetCode" />
             <option value="$PROJECT_DIR$/MvcMvpMvvm" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/lib_base" />
           </set>
         </option>

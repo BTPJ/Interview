@@ -1,3 +1,6 @@
+import com.btpj.dependencies.Versions
+import com.btpj.dependencies.Deps
+
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
@@ -6,12 +9,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion Versions.compileSdkVersion
+    buildToolsVersion Versions.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 30
+        minSdkVersion Versions.minSdkVersion
+        targetSdkVersion Versions.targetSdkVersion
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -36,12 +39,12 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation rootProject.ext.dependencies.coreKtx
-    implementation rootProject.ext.dependencies.appcompat
-    implementation rootProject.ext.dependencies.material
-    implementation rootProject.ext.dependencies.constraintlayout
-    testImplementation rootProject.ext.dependencies.junit
-    androidTestImplementation rootProject.ext.dependencies.junitExt
-    androidTestImplementation rootProject.ext.dependencies.espresso
-    implementation rootProject.ext.dependencies.activityKtx
+    implementation Deps.coreKtx
+    implementation Deps.appcompat
+    implementation Deps.material
+    implementation Deps.constraintlayout
+    testImplementation Deps.junit
+    androidTestImplementation Deps.junitExt
+    androidTestImplementation Deps.espresso
+    implementation Deps.activityKtx
 }

@@ -4,6 +4,7 @@
     <bytecodeTargetLevel target="1.8">
       <module name="Interview.Activity" target="11" />
       <module name="Interview.app" target="11" />
+      <module name="Interview.buildSrc" target="11" />
       <module name="Interview.EventDispatch" target="11" />
       <module name="Interview.Handler" target="11" />
       <module name="Interview.IPC" target="11" />
