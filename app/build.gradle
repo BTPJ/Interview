@@ -54,6 +54,7 @@ dependencies {
     implementation Deps.appcompat
     implementation Deps.material
     implementation Deps.constraintlayout
+    implementation project(path: ':EventBusDemo')
     testImplementation Deps.junit
     androidTestImplementation Deps.junitExt
     androidTestImplementation Deps.espresso
@@ -70,4 +71,5 @@ dependencies {
     implementation project(':MvcMvpMvvm')
     implementation project(':IPC')
     implementation project(':Jetpack')
+    implementation project(':EventBusDemo')
 }

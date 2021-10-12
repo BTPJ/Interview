@@ -30,6 +30,8 @@ object Versions {
     /**---------------Others----------*/
     const val arouterApi = "1.5.2"
     const val arouterCompiler = "1.5.2"
+
+    const val eventbus = "3.2.0"
 }
 
 /**
@@ -60,4 +62,6 @@ object Deps {
     // Arouter：https://github.com/alibaba/ARouter,这里Arouter没有适配Androidx有问题
     const val arouterApi = "com.alibaba:arouter-api:${Versions.arouterApi}"
     const val arouterCompiler = "com.alibaba:arouter-compiler:${Versions.arouterCompiler}"
+
+    const val eventbus = "org.greenrobot:eventbus:${Versions.eventbus}"
 }

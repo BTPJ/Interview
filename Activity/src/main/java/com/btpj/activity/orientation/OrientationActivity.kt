@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import com.btpj.activity.R
+import com.btpj.activity.launch.BActivity
 import com.btpj.lib_base.base.BaseActivity
 import com.btpj.lib_base.utils.LogUtil
 import com.btpj.lib_base.widgets.TitleLayout
@@ -25,9 +26,14 @@ class OrientationActivity : BaseActivity(R.layout.activity_orientation) {
         // 判断是否是作为Application的首页
         private var isIndexPage = true
 
-        fun newIntent(context: Context): Intent {
+        /**
+         * 启动Activity
+         *
+         * @param context Context
+         */
+        fun launch(context: Context) {
             isIndexPage = false
-            return Intent(context, OrientationActivity::class.java)
+            context.startActivity(Intent(context, OrientationActivity::class.java))
         }
     }
 

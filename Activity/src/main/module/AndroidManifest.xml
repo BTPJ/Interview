@@ -4,6 +4,15 @@
 
     <application>
         <activity
+            android:name=".AboutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".launch.BActivity"
+            android:exported="true" />
+        <activity
+            android:name=".launch.AActivity"
+            android:exported="true" />
+        <activity
             android:name=".orientation.OrientationActivity"
             android:configChanges="orientation|screenSize" />
     </application>

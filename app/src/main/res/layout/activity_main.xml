@@ -1,95 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.btpj.lib_base.widgets.TitleLayout
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:isShowBack="false"
-        app:titleBackgroundColor="?attr/colorPrimary"
-        app:titleText="首页" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <LinearLayout
+        <com.btpj.lib_base.widgets.TitleLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            app:isShowBack="false"
+            app:titleBackgroundColor="?attr/colorPrimary"
+            app:titleText="首页" />
 
-            <Button
-                android:id="@+id/btn_activity"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:text="Activity相关"
-                android:textAllCaps="false"
-                tools:ignore="HardcodedText" />
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btn_handler"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:text="Handler机制"
-                android:textAllCaps="false"
-                tools:ignore="HardcodedText" />
+                <Button
+                    android:id="@+id/btn_activity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Activity相关"
+                    android:textAllCaps="false"
+                    tools:ignore="HardcodedText" />
 
-            <Button
-                android:id="@+id/btn_event"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:text="事件分发"
-                android:textAllCaps="false"
-                tools:ignore="HardcodedText" />
+                <Button
+                    android:id="@+id/btn_handler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Handler机制"
+                    android:textAllCaps="false"
+                    tools:ignore="HardcodedText" />
 
-            <Button
-                android:id="@+id/btn_ipc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:text="IPC通信"
-                android:textAllCaps="false"
-                tools:ignore="HardcodedText" />
+                <Button
+                    android:id="@+id/btn_event"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="事件分发"
+                    android:textAllCaps="false"
+                    tools:ignore="HardcodedText" />
 
-            <Button
-                android:id="@+id/btn_mvc_mvp_mvvm"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:text="MVC_MVP_MVVM"
-                android:textAllCaps="false"
-                tools:ignore="HardcodedText" />
+                <Button
+                    android:id="@+id/btn_ipc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="IPC通信"
+                    android:textAllCaps="false"
+                    tools:ignore="HardcodedText" />
 
-            <Button
-                android:id="@+id/btn_kotlin_jetpack"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:text="kotlin &amp; jetpack"
-                android:textAllCaps="false"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
-    </ScrollView>
+                <Button
+                    android:id="@+id/btn_mvc_mvp_mvvm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="MVC_MVP_MVVM"
+                    android:textAllCaps="false"
+                    tools:ignore="HardcodedText" />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+                <Button
+                    android:id="@+id/btn_kotlin_jetpack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="kotlin &amp; jetpack"
+                    android:textAllCaps="false"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:id="@+id/btn_eventBus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="EventBus"
+                    android:textAllCaps="false"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

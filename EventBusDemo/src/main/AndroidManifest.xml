@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.btpj.activity">
+    package="com.btpj.eventbusdemo">
 
     <application
         android:allowBackup="true"
@@ -10,23 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Interview">
         <activity
-            android:name=".orientation.OrientationActivity"
-            android:configChanges="orientation|screenSize">
+            android:name=".EventBus2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".EventBusActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".AboutActivity"
-            android:exported="true" />
-        <activity
-            android:name=".launch.BActivity"
-            android:exported="true" />
-        <activity
-            android:name=".launch.AActivity"
-            android:exported="true" />
     </application>
 
 </manifest>

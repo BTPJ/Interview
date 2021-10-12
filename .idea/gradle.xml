@@ -12,6 +12,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Activity" />
+            <option value="$PROJECT_DIR$/EventBusDemo" />
             <option value="$PROJECT_DIR$/EventDispatch" />
             <option value="$PROJECT_DIR$/Handler" />
             <option value="$PROJECT_DIR$/IPC" />
