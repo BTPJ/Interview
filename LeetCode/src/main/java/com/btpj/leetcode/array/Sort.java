@@ -1,7 +1,5 @@
 package com.btpj.leetcode.array;
 
-import java.util.Arrays;
-
 /**
  * 排序算法
  *
@@ -64,7 +62,7 @@ public class Sort {
 
     /**
      * 插入排序
-     * 依次找到最小、第二小、第三小......的元素放置在第1、2、3......位上面
+     * 左边表示已排序右边表示未排序，将右边的数移到左边去比较
      *
      * @param arr 要排序的数组
      */
