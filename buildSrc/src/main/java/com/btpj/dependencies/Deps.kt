@@ -32,6 +32,7 @@ object Versions {
     const val arouterCompiler = "1.5.2"
 
     const val eventbus = "3.2.0"
+    const val retrofit = "2.9.0"
 }
 
 /**
@@ -64,4 +65,5 @@ object Deps {
     const val arouterCompiler = "com.alibaba:arouter-compiler:${Versions.arouterCompiler}"
 
     const val eventbus = "org.greenrobot:eventbus:${Versions.eventbus}"
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
 }

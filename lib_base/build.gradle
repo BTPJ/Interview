@@ -46,4 +46,5 @@ dependencies {
     androidTestImplementation Deps.junitExt
     androidTestImplementation Deps.espresso
     implementation Deps.activityKtx
+    implementation Deps.retrofit
 }
