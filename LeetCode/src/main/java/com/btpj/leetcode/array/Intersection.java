@@ -30,7 +30,6 @@ public class Intersection {
                 set2.add(i);
             }
         }
-
         return set2.stream().mapToInt(Integer::intValue).toArray();
     }
 
@@ -63,7 +62,6 @@ public class Intersection {
         }
         return Arrays.copyOf(resultNum, index);
     }
-
 
     public static void main(String[] args) {
         // 未排序
