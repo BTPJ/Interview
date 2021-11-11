@@ -7,11 +7,6 @@ import com.btpj.leetcode.list.base.ListNode;
  * <p>
  * 给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点
  * https://leetcode-cn.com/problems/remove-linked-list-elements/
- * 1、hashMap的put和get流程
- * 2、hashMap的resize过程
- * 3、hashMap为啥扩容是2^n
- * 4、hashMap1.7与1.8的区别
- * 5、hashMap为啥使用尾插法
  *
  * @author BTPJ  2021/6/9
  */

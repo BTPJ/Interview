@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 回文链表
+ * 回文链表：链表与其反转链表相同
  * https://leetcode-cn.com/problems/palindrome-linked-list/
  *
  * @author BTPJ  2021/6/10
@@ -28,7 +28,7 @@ public class IsPalindrome {
     private static boolean isPalindrome(ListNode head) {
         List<Integer> list = new ArrayList<>();
 
-        // 将链表的值复制到数组中
+        // 将链表的值复制到集合中
         ListNode currentNode = head;
         while (currentNode != null) {
             list.add(currentNode.val);
