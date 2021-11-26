@@ -37,14 +37,15 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation Deps.coreKtx
-    implementation Deps.appcompat
-    implementation Deps.material
-    implementation Deps.constraintlayout
-    testImplementation Deps.junit
-    androidTestImplementation Deps.junitExt
-    androidTestImplementation Deps.espresso
-    implementation Deps.activityKtx
-    implementation Deps.retrofit
+    api Deps.coreKtx
+    api Deps.appcompat
+    api Deps.material
+    api Deps.constraintlayout
+    api Deps.junit
+    api Deps.junitExt
+    api Deps.espresso
+    api Deps.activityKtx
+    api Deps.retrofit
+    api Deps.viewModelKtx
+    api Deps.liveDataKtx
 }

@@ -11,7 +11,6 @@ import java.util.HashMap;
  * @author BTPJ  2021/7/20
  */
 public class HashMapSourceCode {
-    private String a;
 
     public static void main(String[] args) {
         HashMap<String,String> map = new HashMap<>();

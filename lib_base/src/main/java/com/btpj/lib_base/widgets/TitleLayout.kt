@@ -6,11 +6,11 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
-import androidx.databinding.DataBindingUtil
 import com.btpj.lib_base.R
-import com.btpj.lib_base.databinding.LayoutTitleBinding
 import com.btpj.lib_base.utils.StatusBarUtil
 
 /**
@@ -20,7 +20,12 @@ import com.btpj.lib_base.utils.StatusBarUtil
  */
 class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(context, attrs) {
 
-    private var mBinding: LayoutTitleBinding
+    private var mViewRed: View
+    private var mTvMenu: TextView
+    private var mIvMenu: ImageView
+    private val mTvTitleText: TextView
+    private val mIvBack: ImageView
+    private val mClTitleBar: ConstraintLayout
 
     init {
         // 自定义TitleLayout的相关属性
@@ -44,25 +49,32 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
         typedArray.recycle()
 
         // 自定义TitleLayout的布局
-        mBinding = DataBindingUtil.inflate(
-            LayoutInflater.from(context),
+        LayoutInflater.from(context).inflate(
             R.layout.layout_title,
             this,
             true
-        )
+        ).apply {
+            mClTitleBar = this.findViewById(R.id.cl_titleBar)
+            mIvBack = this.findViewById(R.id.iv_back)
+            mTvTitleText = this.findViewById(R.id.tv_titleText)
+            mIvMenu = this.findViewById(R.id.iv_menu)
+            mTvMenu = this.findViewById(R.id.tv_menu)
+            mViewRed = this.findViewById(R.id.view_red)
+        }
+
 
         // 设置TitleLayout的背景色
-        mBinding.clTitleBar.setBackgroundColor(titleBackgroundColor)
+        mClTitleBar.setBackgroundColor(titleBackgroundColor)
 
         // TitleBar的返回键
-        mBinding.ivBack.apply {
+        mIvBack.apply {
             visibility = if (isShowBack) View.VISIBLE else View.GONE
             setImageResource(backIconRes)
             setOnClickListener { (context as Activity).onBackPressed() }
         }
 
         // TitleBar的标题文本
-        mBinding.tvTitleText.apply {
+        mTvTitleText.apply {
             setTextColor(titleTextColor)
             setTextSize(TypedValue.COMPLEX_UNIT_PX, titleTextSize.toFloat())
             text = titleText
@@ -77,7 +89,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
     private fun setTitleHeightAndPadding() {
         val statusBarHeight = StatusBarUtil.getStatusBarHeight(context)
         // LogUtil.d("状态栏高度:$statusBarHeight")
-        mBinding.clTitleBar.apply {
+        mClTitleBar.apply {
             setPadding(0, statusBarHeight, 0, 0)
             layoutParams.height =
                 resources.getDimension(R.dimen.app_bar_height).toInt() + statusBarHeight
@@ -90,7 +102,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
      * @param resId 返回键图标Id
      */
     fun setBackIcon(resId: Int): TitleLayout {
-        mBinding.ivBack.setImageResource(resId)
+        mIvBack.setImageResource(resId)
         return this
     }
 
@@ -100,7 +112,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
      * @param titleBackgroundColor Title背景色
      */
     fun setTitleBackgroundColor(titleBackgroundColor: Int): TitleLayout {
-        mBinding.clTitleBar.setBackgroundColor(titleBackgroundColor)
+        mClTitleBar.setBackgroundColor(titleBackgroundColor)
         return this
     }
 
@@ -110,7 +122,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
      * @param isVisible Title左侧的返回键是否显示
      */
     fun setBackVisible(isVisible: Boolean): TitleLayout {
-        mBinding.ivBack.visibility = if (isVisible) View.VISIBLE else View.GONE
+        mIvBack.visibility = if (isVisible) View.VISIBLE else View.GONE
         return this
     }
 
@@ -120,7 +132,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
      * @param titleText Title中间的标题文本名
      */
     fun setTitleText(titleText: String): TitleLayout {
-        mBinding.tvTitleText.text = titleText
+        mTvTitleText.text = titleText
         return this
     }
 
@@ -130,7 +142,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
      * @param titleTextColor Title中间的标题文本颜色
      */
     fun setTitleTextColor(titleTextColor: Int): TitleLayout {
-        mBinding.tvTitleText.setTextColor(titleTextColor)
+        mTvTitleText.setTextColor(titleTextColor)
         return this
     }
 
@@ -140,7 +152,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
      * @param titleTextSize Title中间的标题文本大小
      */
     fun setTitleTextSize(titleTextSize: Int): TitleLayout {
-        mBinding.tvTitleText.setTextSize(TypedValue.COMPLEX_UNIT_PX, titleTextSize.toFloat())
+        mTvTitleText.setTextSize(TypedValue.COMPLEX_UNIT_PX, titleTextSize.toFloat())
         return this
     }
 
@@ -151,14 +163,13 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
      * @param onClickListener 菜单点击回调
      */
     fun setRightView(text: String, onClickListener: OnClickListener): TitleLayout {
-        mBinding.apply {
-            ivMenu.visibility = View.GONE
-            tvMenu.apply {
-                visibility = View.VISIBLE
-                this.text = text
-                setOnClickListener(onClickListener)
-            }
+        mIvMenu.visibility = View.GONE
+        mTvMenu.apply {
+            visibility = View.VISIBLE
+            this.text = text
+            setOnClickListener(onClickListener)
         }
+
         return this
     }
 
@@ -168,13 +179,13 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
      * @param rightViewBackground   Title右测的TextView背景色
      */
     fun setRightViewBackground(rightViewBackground: Int): TitleLayout {
-        mBinding.apply {
-            ivMenu.visibility = View.GONE
-            tvMenu.apply {
-                visibility = View.VISIBLE
-                setBackgroundColor(rightViewBackground)
-            }
+
+        mIvMenu.visibility = View.GONE
+        mTvMenu.apply {
+            visibility = View.VISIBLE
+            setBackgroundColor(rightViewBackground)
         }
+
         return this
     }
 
@@ -186,16 +197,12 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
      * @param onClickListener 菜单点击回调
      */
     fun setRightView(text: String, textColor: Int, onClickListener: OnClickListener): TitleLayout {
-        mBinding.apply {
-            ivMenu.visibility = View.GONE
-                .apply {
-                    tvMenu.apply {
-                        visibility = View.VISIBLE
-                        this.text = text
-                        setTextColor(textColor)
-                        setOnClickListener(onClickListener)
-                    }
-                }
+        mIvMenu.visibility = View.GONE
+        mTvMenu.apply {
+            visibility = View.VISIBLE
+            this.text = text
+            setTextColor(textColor)
+            setOnClickListener(onClickListener)
         }
         return this
     }
@@ -206,15 +213,13 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
      * @param text            Title右测的TextView编辑菜单文本
      */
     fun setRightView(text: String): TitleLayout {
-        mBinding.apply {
-            ivMenu.visibility = View.GONE
-                .apply {
-                    tvMenu.apply {
-                        visibility = View.VISIBLE
-                        this.text = text
-                    }
-                }
+        mIvMenu.visibility = View.GONE
+
+        mTvMenu.apply {
+            visibility = View.VISIBLE
+            this.text = text
         }
+
         return this
     }
 
@@ -225,14 +230,13 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
      * @param onClickListener 菜单点击回调
      */
     fun setRightView(imageRes: Int, onClickListener: OnClickListener): TitleLayout {
-        mBinding.apply {
-            tvMenu.visibility = View.GONE
-            ivMenu.apply {
-                visibility = View.VISIBLE
-                setImageResource(imageRes)
-                setOnClickListener(onClickListener)
-            }
+        mTvMenu.visibility = View.GONE
+        mIvMenu.apply {
+            visibility = View.VISIBLE
+            setImageResource(imageRes)
+            setOnClickListener(onClickListener)
         }
+
         return this
     }
 
@@ -242,13 +246,12 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
      * @param imageRes        Title右测的ImageView编辑菜单ImageViewResource
      */
     fun setRightView(imageRes: Int): TitleLayout {
-        mBinding.apply {
-            tvMenu.visibility = View.GONE
-            ivMenu.apply {
-                visibility = View.VISIBLE
-                setImageResource(imageRes)
-            }
+        mTvMenu.visibility = View.GONE
+        mIvMenu.apply {
+            visibility = View.VISIBLE
+            setImageResource(imageRes)
         }
+
         return this
     }
 
@@ -258,7 +261,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
      * @param isVisible 红点是否显示
      */
     fun setRedViewVisible(isVisible: Boolean): TitleLayout {
-        mBinding.viewRed.visibility = if (isVisible) View.VISIBLE else View.INVISIBLE
+        mViewRed.visibility = if (isVisible) View.VISIBLE else View.INVISIBLE
         return this
     }
 
@@ -266,7 +269,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
      * 设置左键的点击事件
      */
     fun setLeftOnclick(l: OnClickListener): TitleLayout {
-        mBinding.ivBack.setOnClickListener(l)
+        mIvBack.setOnClickListener(l)
         return this
     }
 }

@@ -49,22 +49,8 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation Deps.coreKtx
-    implementation Deps.appcompat
-    implementation Deps.material
-    implementation Deps.constraintlayout
-    implementation project(path: ':EventBusDemo')
-    testImplementation Deps.junit
-    androidTestImplementation Deps.junitExt
-    androidTestImplementation Deps.espresso
-
-//    implementation Deps.arouterApi
-//    kapt Deps.arouterCompiler
-
     implementation project(':lib_base')
 
-    // 加入判断，只有作为module包才引入
     implementation project(':Activity')
     implementation project(':Handler')
     implementation project(':EventDispatch')

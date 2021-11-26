@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.btpj.lib_base.BR
+import com.btpj.lib_base.R
 import com.btpj.lib_base.utils.StatusBarUtil
 
 /**

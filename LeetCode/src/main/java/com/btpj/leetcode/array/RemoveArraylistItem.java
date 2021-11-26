@@ -14,14 +14,15 @@ import java.util.List;
  */
 public class RemoveArraylistItem {
 
-    static List<Integer> list = new ArrayList<>(Arrays.asList(0, 11, 22,22, 33, 44, 55));
+    static List<Integer> list = new ArrayList<>(Arrays.asList(0, 11, 22, 23, 33, 44, 55));
 
     public static void main(String[] args) {
-        System.out.println(getList3());
+        System.out.println(getList1());
     }
 
     /**
-     * 使用foreach迭代会抛ConcurrentModificationException异常，主要有modCount 和 expectedModCount不一致
+     * 使用foreach迭代会抛IndexOutOfBoundsException异常
+     *
      * @return list
      */
     private static List<Integer> getList1() {
@@ -34,14 +35,15 @@ public class RemoveArraylistItem {
     }
 
     /**
-     *  使用普通for循环不会导致IndexOutOfBoundsException
+     * 使用普通for循环不会导致IndexOutOfBoundsException
+     *
      * @return list
      */
     private static List<Integer> getList2() {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i) == 22) {
                 list.remove(i);
-                // 这里需要加上i--,遗漏了被删除元素后的一个元素，譬如连续两个22，第二个会跳过带来错误结果，并不是会抛
+                // 这里需要加上i--,遗漏了被删除元素后的一个元素，譬如连续两个22，第二个会跳过带来错误结果，并不是会抛异常
                 i--;
             }
         }
@@ -49,13 +51,14 @@ public class RemoveArraylistItem {
     }
 
     /**
-     *  使用Iterator迭代器也可以
+     * 使用Iterator迭代器也可以
+     *
      * @return list
      */
     private static List<Integer> getList3() {
         Iterator<Integer> iterator = list.iterator();
-        while (iterator.hasNext()){
-            if (iterator.next()==22){
+        while (iterator.hasNext()) {
+            if (iterator.next() == 22) {
                 iterator.remove();
             }
         }
@@ -63,7 +66,8 @@ public class RemoveArraylistItem {
     }
 
     /**
-     *  java8 的removeIf（本质上也是Iterator）
+     * java8 的removeIf（本质上也是Iterator）
+     *
      * @return list
      */
     private static List<Integer> getList4() {

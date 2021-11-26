@@ -1,7 +1,7 @@
 import com.btpj.dependencies.Versions
 import com.btpj.dependencies.Deps
 
-if (Deps.isApplication) {
+if (isBuildApp.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
@@ -16,7 +16,7 @@ android {
     buildToolsVersion Versions.buildToolsVersion
 
     defaultConfig {
-        if (Deps.isApplication) {
+        if (isBuildApp.toBoolean()) {
             applicationId "com.btpj.ipc"
         }
         minSdkVersion Versions.minSdkVersion
@@ -45,7 +45,7 @@ android {
 
     sourceSets {
         main {
-            if (Deps.isApplication) {
+            if (isBuildApp.toBoolean()) {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
             } else {
                 manifest.srcFile 'src/main/module/AndroidManifest.xml'
@@ -55,13 +55,5 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation Deps.coreKtx
-    implementation Deps.appcompat
-    implementation Deps.material
-    implementation Deps.constraintlayout
-    testImplementation Deps.junit
-    androidTestImplementation Deps.junitExt
-    androidTestImplementation Deps.espresso
-    implementation project(path: ':lib_base')
+    implementation project(':lib_base')
 }

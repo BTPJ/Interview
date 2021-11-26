@@ -1,5 +1,7 @@
 package com.btpj.interview
 
+import android.os.Bundle
+import android.os.PersistableBundle
 import com.btpj.activity.AboutActivity
 import com.btpj.eventbusdemo.EventBusActivity
 import com.btpj.eventdispatch.EventDispatchActivity
@@ -55,5 +57,9 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>(R.layout.activity_
             // EventBus
             btnEventBus.setOnClickListener { EventBusActivity.launch(this@MainActivity) }
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
     }
 }

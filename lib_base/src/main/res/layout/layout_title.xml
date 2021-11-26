@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-通用的TitleBar布局 -->
+<?xml version="1.0" encoding="utf-8"?><!-- 通用的TitleBar布局 -->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -7,7 +6,8 @@
     <data>
         <!-- 这个布局加入dataBinding纯粹是为了让BR生成viewModel的Variable
          以便BaseVMBActivity中调用mBinding.setVariable(BR.viewModel, mViewModel)
-         而不用实际使用的Activity(继承自BaseVMBActivity)每次都调用一遍-->
+         而不用实际使用的Activity(继承自BaseVMBActivity)每次都调用一遍,
+         可放置在lib_base的module下res中任意位置-->
         <variable
             name="viewModel"
             type="com.btpj.lib_base.base.BaseViewModel" />

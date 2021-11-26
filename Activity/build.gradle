@@ -1,7 +1,7 @@
 import com.btpj.dependencies.Versions
 import com.btpj.dependencies.Deps
 
-if (Deps.isApplication) {
+if (isBuildApp.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
@@ -15,7 +15,7 @@ android {
     buildToolsVersion Versions.buildToolsVersion
 
     defaultConfig {
-        if (Deps.isApplication) {
+        if (isBuildApp.toBoolean()) {
             applicationId "com.btpj.activity"
         }
         minSdkVersion Versions.minSdkVersion
@@ -42,7 +42,7 @@ android {
 
     sourceSets {
         main {
-            if (Deps.isApplication) {
+            if (isBuildApp.toBoolean()) {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
             } else {
                 manifest.srcFile 'src/main/module/AndroidManifest.xml'
@@ -56,18 +56,6 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation Deps.coreKtx
-    implementation Deps.appcompat
-    implementation Deps.material
-    implementation Deps.constraintlayout
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation Deps.junit
-    androidTestImplementation Deps.junitExt
-    androidTestImplementation Deps.espresso
-
 //    implementation Deps.arouterApi
 //    kapt Deps.arouterCompiler
 
