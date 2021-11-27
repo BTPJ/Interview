@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.8">
-      <module name="Interview.Activity" target="11" />
-      <module name="Interview.app" target="11" />
-      <module name="Interview.buildSrc" target="11" />
-      <module name="Interview.EventBusDemo" target="11" />
-      <module name="Interview.EventDispatch" target="11" />
-      <module name="Interview.Handler" target="11" />
-      <module name="Interview.IPC" target="11" />
-      <module name="Interview.Jetpack" target="11" />
-      <module name="Interview.lib_base" target="11" />
-      <module name="Interview.MvcMvpMvvm" target="11" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8" />
   </component>
 </project>
