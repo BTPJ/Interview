@@ -10,7 +10,6 @@ import java.util.concurrent.CopyOnWriteArrayList
 import java.util.concurrent.atomic.AtomicBoolean
 
 class BookManagerService : Service() {
-
     /** 使用CopyOnWriteArrayList支持并发读写 */
     private val mBookList = CopyOnWriteArrayList<Book>()
     private val mListenerList = RemoteCallbackList<IOnNewBookArrivedListener>()
