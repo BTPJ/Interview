@@ -1,4 +1,4 @@
-package com.btpj.design_pattern.factory.simple_factory
+package factory.simple_factory
 
 /**
  * 推送工厂类

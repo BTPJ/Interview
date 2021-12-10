@@ -1,4 +1,4 @@
-package com.btpj.design_pattern.factory.simple_factory
+package factory.simple_factory
 
 /**
  * 具体产品类：小米推送具体实现

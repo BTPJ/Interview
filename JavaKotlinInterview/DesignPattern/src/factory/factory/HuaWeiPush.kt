@@ -1,6 +1,4 @@
-package com.btpj.design_pattern.factory.factory
-
-import factory.factory.IPush
+package factory.factory
 
 /**
  * 具体产品类：华为推送具体实现

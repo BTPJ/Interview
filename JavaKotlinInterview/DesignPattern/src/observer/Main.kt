@@ -1,4 +1,4 @@
-package com.btpj.design_pattern.observer
+package observer
 
 /**
  * 调用类

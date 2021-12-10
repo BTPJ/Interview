@@ -1,6 +1,4 @@
-package com.btpj.design_pattern.factory.factory
-
-import factory.factory.IPush
+package factory.factory
 
 /**
  * 推送抽象工厂类

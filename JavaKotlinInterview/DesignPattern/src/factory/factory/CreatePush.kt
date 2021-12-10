@@ -1,4 +1,4 @@
-package com.btpj.design_pattern.factory.factory
+package factory.factory
 
 /**
  * 具体调用

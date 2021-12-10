@@ -1,4 +1,4 @@
-package com.btpj.design_pattern.factory.simple_factory
+package factory.simple_factory
 
 /**
  * 定义一个通用的push推送接口

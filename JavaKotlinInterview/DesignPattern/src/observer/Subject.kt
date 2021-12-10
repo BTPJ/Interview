@@ -1,4 +1,4 @@
-package com.btpj.design_pattern.observer
+package observer
 
 /**
  * 定义被观察者接口
