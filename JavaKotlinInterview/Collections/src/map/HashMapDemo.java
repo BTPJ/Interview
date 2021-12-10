@@ -20,7 +20,7 @@ public class HashMapDemo {
 
         // put流程：实质上时调用putVal方法
         // 1、第一次put元素时会触发resize方法，其实是将hashMap的Node[]数组初始化工作进行了类似懒加载的处理
-        // 2、将hash值与capacity-1进行&运算计算出当前key要放置在数组中的位置；
+        // 2、将hash值与capacity-1进行&运算计算出当前key要放置在数组中的位置；hash&(capacity-1) == hash%capacity
         // 当该位置无值时就会直接初始化创建一个Node(hash,key,value,null)并放置在该位置，
         // 如果已有值就先判断存储和插入的key是否相等，相等的话通过onlyIfAbsent参数判定是否要覆盖更新并返回旧值
         // 3、如果已有值并且与要存储的key不等，就先判定该Node是否是一个TreeNode(红黑树，Node的子类),是的话就调用putTreeVal方法执行红黑树的插入操作
