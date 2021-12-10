@@ -1,9 +1,10 @@
-package com.btpj.interview
+package com.btpj.androidinterview
 
 import com.btpj.activity.AboutActivity
 import com.btpj.eventbusdemo.EventBusActivity
 import com.btpj.eventdispatch.EventDispatchActivity
 import com.btpj.handler.HandlerActivity
+import com.btpj.interview.R
 import com.btpj.interview.databinding.ActivityMainBinding
 import com.btpj.ipc.IPCActivity
 import com.btpj.jetpack.JetpackActivity

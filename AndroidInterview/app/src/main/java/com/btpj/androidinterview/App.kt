@@ -1,4 +1,4 @@
-package com.btpj.interview
+package com.btpj.androidinterview
 
 import android.app.Application
 //import com.alibaba.android.arouter.launcher.ARouter
