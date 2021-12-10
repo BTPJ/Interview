@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class RemoveArraylistItem {
 
-    static List<String> list = new ArrayList<>(Arrays.asList("0", "11", "22", "23", "33", "22", "55"));
+    private static List<String> list = new ArrayList<>(Arrays.asList("0", "11", "22", "23", "33", "22", "55"));
 
     public static void main(String[] args) {
 //        System.out.println(getList1());
@@ -33,7 +33,7 @@ public class RemoveArraylistItem {
     }
 
     /**
-     * 使用增强for循环会抛IndexOutOfBoundsException异常
+     * 使用增强for循环会抛ConcurrentModificationException异常
      *
      * @return list
      */
