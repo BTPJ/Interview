@@ -1,11 +1,10 @@
 package com.btpj.lib_base.utils;
 
-import java.util.HashMap;
+import java.util.ArrayDeque;
 
 /**
- * @author LTP  2021/12/2
+ * @author LTP  2021/12/10
  */
 class Te {
-
-    HashMap<String, String> map = new HashMap<>();
+    ArrayDeque<String> arrayDeque = new ArrayDeque<>();
 }
