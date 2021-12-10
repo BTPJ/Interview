@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class RemoveArraylistItem {
 
-    private static List<String> list = new ArrayList<>(Arrays.asList("0", "11", "22", "23", "33", "22", "55"));
+    private static final ArrayList<String> list = new ArrayList<>(Arrays.asList("0", "11", "22", "23", "33", "22", "55"));
 
     public static void main(String[] args) {
 //        System.out.println(getList1());
@@ -80,12 +80,12 @@ public class RemoveArraylistItem {
 
     /**
      * 使用forEach循环会导致 java.util.ConcurrentModificationException异常
-     * 本质上跟
+     *
      *
      * @return list
      */
     private static List<String> getList4() {
-        // forEach本质上就是迭代器
+        // ArrayList的forEach源码中会检测modCount == expectedModCount
         list.forEach(i -> {
             if ("22".equals(i)) {
                 list.remove(i);
@@ -111,7 +111,8 @@ public class RemoveArraylistItem {
     }
 
     /**
-     * java8的removeIf（本质上也是Iterator）
+     * java8的removeIf
+     * 借助了BitSet（long数组）类记录要移除的元素的index，然后进行元素内的逐个赋值（使用debug逐步运行更易懂）
      *
      * @return list
      */
