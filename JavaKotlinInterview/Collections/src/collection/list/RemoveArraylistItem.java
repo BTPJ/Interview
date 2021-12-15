@@ -25,11 +25,15 @@ public class RemoveArraylistItem {
 
     public static void main(String[] args) {
 //        System.out.println(getList1());
-        System.out.println(getList2());
+//        System.out.println(getList2());
 //        System.out.println(getList3());
 //        System.out.println(getList4());
 //        System.out.println(getList5());
 //        System.out.println(getList6());
+
+        ArrayList<String> arrayList = new ArrayList<>(Arrays.asList("0", "11", "22", "22", "33", "22", "23", "55"));
+        arrayList.removeIf("22"::equals);
+        System.out.println(arrayList);
     }
 
     /**
