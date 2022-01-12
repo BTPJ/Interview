@@ -1,6 +1,6 @@
 package list;
 
-import com.btpj.leetcode.list.base.ListNode;
+import list.base.ListNode;
 
 import java.util.ArrayList;
 import java.util.List;

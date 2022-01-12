@@ -1,6 +1,6 @@
 package list;
 
-import com.btpj.leetcode.list.base.ListNode;
+import list.base.ListNode;
 
 /**
  * 删除链表的倒数第 N 个结点
@@ -17,13 +17,14 @@ public class RemoveNthFromEnd {
     public static void main(String[] args) {
         int[] arr = {4, 5, 1, 9, 1, 3};
         ListNode node = ListNode.list2ListNode(arr);
-        System.out.println(ListNode.listNode2String(removeNthFromEnd(node,2)));
+        System.out.println(ListNode.listNode2String(removeNthFromEnd(node, 2)));
     }
 
     /**
      * 删除链表的倒数第 N 个结点，时间复杂度：O(n) 空间复杂度：O(1)
+     *
      * @param head 链表
-     * @param n 倒数第 N 个结点
+     * @param n    倒数第 N 个结点
      * @return 新链表
      */
     public static ListNode removeNthFromEnd(ListNode head, int n) {

@@ -1,6 +1,6 @@
 package list;
 
-import com.btpj.leetcode.list.base.ListNode;
+import list.base.ListNode;
 
 /**
  * 移除链表元素

@@ -1,6 +1,6 @@
 package list;
 
-import com.btpj.leetcode.list.base.ListNode;
+import list.base.ListNode;
 
 /**
  * 使用一次循环寻找链表的倒数第 k个结点

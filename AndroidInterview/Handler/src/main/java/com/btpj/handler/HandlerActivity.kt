@@ -3,11 +3,10 @@ package com.btpj.handler
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.os.Handler
-import android.os.Looper
-import android.os.Message
+import android.os.*
 import android.widget.Button
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import com.btpj.lib_base.base.BaseActivity
 import com.btpj.lib_base.utils.LogUtil
 import java.lang.ref.WeakReference
@@ -52,6 +51,7 @@ class HandlerActivity : BaseActivity(R.layout.activity_handler) {
 //            startWork()
 //            MyThread().start()
             MyThread2().start()
+//            SystemClock.sleep(50000)
         }
 
         // 这里调用looper.quit释放MyThread2，quit会回收消息并调用nativeWake,nativeWake会唤醒nativePollOnce
@@ -84,13 +84,21 @@ class HandlerActivity : BaseActivity(R.layout.activity_handler) {
     private lateinit var myLooper: Looper
 
     inner class MyThread2 : Thread() {
+        @RequiresApi(Build.VERSION_CODES.M)
         override fun run() {
             super.run()
             Looper.prepare()
             myLooper = Looper.myLooper()!!
+            // IdelHandler回调的时机是消息队列中的非延迟消息都处理完毕处于暂时空闲状态
+            myLooper.queue.addIdleHandler {
+                LogUtil.d("回调IdleHandler")
+                // 返回false表示执行一次后会移除该回调，返回true则会只要空闲就会回调
+                return@addIdleHandler true
+            }
             val threadHandler = MyHandler(WeakReference(this@HandlerActivity), myLooper)
             val obtainMessage = threadHandler.obtainMessage(3, "子线程中的handler向子线程的Looper发消息")
             threadHandler.sendMessage(obtainMessage)
+            threadHandler.sendEmptyMessageDelayed(4, 3000)
             Looper.loop()
             LogUtil.d("MyThread2执行完毕")
         }

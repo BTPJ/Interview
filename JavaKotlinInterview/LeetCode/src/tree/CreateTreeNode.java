@@ -1,6 +1,6 @@
 package tree;
 
-import com.btpj.leetcode.tree.base.TreeNode;
+import tree.base.TreeNode;
 
 import java.util.*;
 

@@ -1,6 +1,6 @@
 package tree;
 
-import com.btpj.leetcode.tree.base.TreeNode;
+import tree.base.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,17 +17,17 @@ public class KthSmallest {
     public static void main(String[] args) {
         Integer[] arr = {3, 1, 4, null, 2};
         TreeNode tree = CreateTreeNode.array2Tree(arr);
-        System.out.println("该二叉树的第2小值是：" + kthSmallest(tree,2));
+        System.out.println("该二叉树的第2小值是：" + kthSmallest(tree, 2));
     }
 
     public static int kthSmallest(TreeNode root, int k) {
         List<Integer> list = new ArrayList<>();
-        inorder(root,list);
+        inorder(root, list);
         return list.get(k - 1);
     }
 
-    private static void inorder(TreeNode root, List<Integer> list){
-        if(root == null) return;
+    private static void inorder(TreeNode root, List<Integer> list) {
+        if (root == null) return;
         inorder(root.left, list);
         list.add(root.val);
         inorder(root.right, list);

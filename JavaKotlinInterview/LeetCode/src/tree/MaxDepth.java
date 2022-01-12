@@ -1,6 +1,6 @@
 package tree;
 
-import com.btpj.leetcode.tree.base.TreeNode;
+import tree.base.TreeNode;
 
 /**
  * 求二叉树的最大深度

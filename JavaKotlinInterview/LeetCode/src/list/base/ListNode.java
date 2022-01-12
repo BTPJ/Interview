@@ -1,9 +1,5 @@
 package list.base;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 /**
  * 链表
  *

@@ -3,6 +3,9 @@
     package="com.btpj.handler">
 
     <application>
+        <activity
+            android:name=".IdelHandlerActivity"
+            android:exported="false" />
         <activity android:name=".HandlerActivity" />
     </application>
 
