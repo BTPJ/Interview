@@ -46,9 +46,7 @@ public class ExecutorDemo {
             for (int i = 0; i < 1000000; i++) {
                 mExecutorDemo.reduce();
             }
-
         }
-
     }
 
     public static void main(String[] args) {
