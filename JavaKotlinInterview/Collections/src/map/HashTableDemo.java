@@ -18,5 +18,4 @@ public class HashTableDemo {
         System.out.println(hashtable.get("LTP"));
         System.out.println(hashtable.get("LTP1"));
     }
-
 }
