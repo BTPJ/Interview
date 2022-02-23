@@ -30,7 +30,7 @@ class EventDispatchActivity :
     @SuppressLint("ClickableViewAccessibility")
     override fun setupViews() {
         findViewById<TitleLayout>(R.id.titleLayout).setBackVisible(!isIndexPage)
-//mBinding.tv
+//        mBinding.tv
 //        findViewById<View>(R.id.myView).setOnTouchListener { _, event ->
 //            LogUtil.w("MyView调用setOnTouchListener返回true")
 //            LogUtil.w(event.toString())

@@ -5,14 +5,15 @@
  */
 public class VolatileDemo {
 
-    //    private boolean mFlag = true;
+    private boolean mFlag = true;
     // volatile针对轻量级的赋值操作同步有用
-    private volatile boolean mFlag = true;
+//    private volatile boolean mFlag = true;
 
     private void task1() {
         new Thread(() -> {
             while (mFlag) {
-                // System.out.print("BTPJ，"); 里面做一些稍微耗时的即使不加Volatile关键字也会停止
+                // 注意这里不要放任何耗时操作，即使是打印也不行，只看task1线程会不会3s后自动停止
+                // System.out.print("BTPJ，");
             }
         }).start();
     }
@@ -21,10 +22,10 @@ public class VolatileDemo {
         new Thread(() -> {
             try {
                 Thread.sleep(3000);
+                mFlag = false;
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            mFlag = false;
         }).start();
     }
 

@@ -1,3 +1,6 @@
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -14,43 +17,51 @@ public class AtomicDemo {
     static final AtomicDemo mAtomicDemo = new AtomicDemo();
 
     //使用atomicInteger包装后进行原子操作能使得线程同步
-    private static final AtomicInteger atomicInteger = new AtomicInteger(1000000000);
+    private static final AtomicInteger atomicInteger = new AtomicInteger(100000);
+    private static int i = 100000;
 
     /**
      * 每次减一
      */
     private void reduce() {
         atomicInteger.decrementAndGet();
+        i--;
     }
 
     /**
      * 执行
      */
     public void execute() {
-        // 普通方式开启1000个线程执行
-        long startTime = System.currentTimeMillis();
-        for (int i = 0; i < 1000; i++) {
-            new Thread(new MyRunnable()).start();
+        // 开启100个线程放入线程池执行
+        ExecutorService executorService = Executors.newFixedThreadPool(50);
+        for (int i = 0; i < 100; i++) {
+            executorService.execute(new MyThread());
         }
+        executorService.shutdown();
         while (true) {
-            if (Thread.activeCount() == 1) {
-                System.out.println("普通方式执行线程加Atomic方式完毕，结果为" + atomicInteger + "，耗时" + (System.currentTimeMillis() - startTime) + "ms");
+            // 线程池中线程执行完毕
+            if (executorService.isTerminated()) {
+                System.out.println("Atomic方式执行完毕，结果为" + atomicInteger);
+                System.out.println("普通方式执行完毕，结果为" + i);
                 break;
             }
         }
     }
 
 
-    static class MyRunnable implements Runnable {
+    static class MyThread extends Thread {
 
         @Override
         public void run() {
-
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             // 子线程中做10000次reduce操作
-            for (int i = 0; i < 1000000; i++) {
+            for (int i = 0; i < 1000; i++) {
                 mAtomicDemo.reduce();
             }
-
         }
     }
 

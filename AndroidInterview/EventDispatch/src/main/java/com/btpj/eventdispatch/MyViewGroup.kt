@@ -23,8 +23,8 @@ class MyViewGroup @JvmOverloads constructor(
      */
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         LogUtil.d("MyViewGroup调用dispatchTouchEvent")
-        return super.dispatchTouchEvent(ev)
-//        return true
+//        return super.dispatchTouchEvent(ev)
+        return true
 //        return false
     }
 
