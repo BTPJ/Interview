@@ -1,9 +1,10 @@
-package com.btpj.eventdispatch
+package com.btpj.eventdispatch.eventdispatch
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.MotionEvent
+import com.btpj.eventdispatch.R
 import com.btpj.eventdispatch.databinding.ActivityEventDispatchBinding
 import com.btpj.lib_base.base.BaseBindingActivity
 import com.btpj.lib_base.utils.LogUtil

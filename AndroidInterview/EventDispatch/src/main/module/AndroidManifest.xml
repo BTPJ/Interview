@@ -3,7 +3,8 @@
     package="com.btpj.eventdispatch">
 
     <application>
-        <activity android:name=".EventDispatchActivity" />
+        <activity android:name=".MainEventDispatchActivity" />
+        <activity android:name=".eventdispatch.EventDispatchActivity" />
     </application>
 
 </manifest>

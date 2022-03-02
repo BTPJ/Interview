@@ -1,4 +1,4 @@
-package com.btpj.eventdispatch
+package com.btpj.eventdispatch.eventdispatch
 
 import android.annotation.SuppressLint
 import android.content.Context

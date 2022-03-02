@@ -2,7 +2,7 @@ package com.btpj.androidinterview
 
 import com.btpj.activity.AboutActivity
 import com.btpj.eventbusdemo.EventBusActivity
-import com.btpj.eventdispatch.EventDispatchActivity
+import com.btpj.eventdispatch.MainEventDispatchActivity
 import com.btpj.handler.HandlerActivity
 import com.btpj.interview.R
 import com.btpj.interview.databinding.ActivityMainBinding
@@ -32,7 +32,7 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>(R.layout.activity_
 
             // 事件分发
             btnEvent.setOnClickListener {
-                startActivity(EventDispatchActivity.newIntent(this@MainActivity))
+                startActivity(MainEventDispatchActivity.newIntent(this@MainActivity))
             }
 
             // IPC通信
