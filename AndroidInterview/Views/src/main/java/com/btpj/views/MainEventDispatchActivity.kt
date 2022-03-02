@@ -17,7 +17,6 @@ class MainEventDispatchActivity :
     BaseBindingActivity<ActivityMainEventDispatchBinding>(R.layout.activity_main_event_dispatch) {
 
     companion object {
-
         // 判断是否是作为Application的首页
         private var isIndexPage = true
 
