@@ -15,8 +15,8 @@ object Versions {
     const val versionName = "1.0"
 
     const val coreKtx = "1.3.2"
-    const val appcompat = "1.2.0"
-    const val material = "1.3.0"
+    const val appcompat = "1.3.0"
+    const val material = "1.4.0"
     const val constraintlayout = "2.0.4"
     const val junit = "4.13.2"
     const val junitExt = "1.1.2"

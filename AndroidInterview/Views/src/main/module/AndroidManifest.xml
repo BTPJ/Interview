@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.btpj.eventdispatch">
+
+    <application>
+        <activity android:name="com.btpj.views.MainEventDispatchActivity" />
+        <activity android:name="com.btpj.views.eventdispatch.EventDispatchActivity" />
+    </application>
+
+</manifest>

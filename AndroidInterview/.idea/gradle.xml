@@ -13,11 +13,11 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Activity" />
             <option value="$PROJECT_DIR$/EventBusDemo" />
-            <option value="$PROJECT_DIR$/EventDispatch" />
             <option value="$PROJECT_DIR$/Handler" />
             <option value="$PROJECT_DIR$/IPC" />
             <option value="$PROJECT_DIR$/Jetpack" />
             <option value="$PROJECT_DIR$/MvcMvpMvvm" />
+            <option value="$PROJECT_DIR$/Views" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/lib_base" />

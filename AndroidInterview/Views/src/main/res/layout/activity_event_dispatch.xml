@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.btpj.views.eventdispatch.EventDispatchActivity">
+
+        <com.btpj.lib_base.widgets.TitleLayout
+            android:id="@+id/titleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleText="Android事件分发" />
+
+        <com.btpj.views.eventdispatch.MyViewGroup
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="@color/_ff4a57"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.btpj.views.eventdispatch.MyViewGroup2
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:background="@color/design_default_color_primary"
+                android:gravity="center">
+
+                <com.btpj.views.eventdispatch.MyView
+                    android:id="@+id/myView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@color/_4cd2f5" />
+
+            </com.btpj.views.eventdispatch.MyViewGroup2>
+        </com.btpj.views.eventdispatch.MyViewGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
