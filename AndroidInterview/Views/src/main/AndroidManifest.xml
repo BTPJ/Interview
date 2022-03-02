@@ -12,7 +12,7 @@
         <activity
             android:name="com.btpj.views.eventconflict.EventConflictActivity"
             android:exported="false" />
-        <activity android:name="com.btpj.views.MainEventDispatchActivity">
+        <activity android:name="com.btpj.views.MainViewsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
