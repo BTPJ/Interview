@@ -1,4 +1,4 @@
-package com.btpj.views.eventconflict
+package com.btpj.views.eventconflict.different
 
 import android.content.Context
 import android.content.Intent
@@ -7,7 +7,7 @@ import com.btpj.eventdispatch.databinding.ActivityEventConflictBinding
 import com.btpj.lib_base.base.BaseBindingActivity
 
 /**
- * 不同滑动方向的事件冲突解决
+ * 不同滑动方向的事件冲突解决，以HorizontalScrollView嵌套ListView为例
  *
  * @author LTP 2022/2/28
  */

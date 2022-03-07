@@ -4,9 +4,10 @@ import android.content.Context
 import android.content.Intent
 import com.btpj.eventdispatch.R
 import com.btpj.eventdispatch.databinding.ActivityMainViewsBinding
-import com.btpj.views.eventconflict.EventConflictActivity
+import com.btpj.views.eventconflict.different.EventConflictActivity
 import com.btpj.views.eventdispatch.EventDispatchActivity
 import com.btpj.lib_base.base.BaseBindingActivity
+import com.btpj.views.eventconflict.same.SameEventConflictActivity
 
 /**
  * 壳工程
@@ -42,7 +43,7 @@ class MainViewsActivity :
 
             // 相同方向的事件冲突
             btnEventConflict2.setOnClickListener {
-                startActivity(EventDispatchActivity.newIntent(this@MainViewsActivity))
+                startActivity(SameEventConflictActivity.newIntent(this@MainViewsActivity))
             }
         }
     }

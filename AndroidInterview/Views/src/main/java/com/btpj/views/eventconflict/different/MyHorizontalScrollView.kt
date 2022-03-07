@@ -1,15 +1,13 @@
-package com.btpj.views.eventconflict
+package com.btpj.views.eventconflict.different
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.widget.HorizontalScrollView
-import android.widget.ScrollView
-import com.btpj.lib_base.utils.LogUtil
 import kotlin.math.abs
 
 /**
- * 解决HorizontalScrollView嵌套ListView的滑动冲突
+ * 外部拦截法解决HorizontalScrollView嵌套ListView的滑动冲突
  * 冲突很小，只会在最最开始斜着滑动时有一些冲突，可以测试在ACTION_MOVE中取消/加上 return false看出来
  *
  * @author LTP  2022/2/28
@@ -29,7 +27,7 @@ class MyHorizontalScrollView(context: Context?, attrs: AttributeSet?) :
             }
             MotionEvent.ACTION_MOVE -> {
                 if (abs(ev.x - lastX) < abs(ev.y - lastY)) {
-                    // 当x方向的滑动距离小于y方向的举例时不拦截
+                    // 当x方向的滑动距离小于y方向的距离时不拦截
                     return false
                 }
             }
