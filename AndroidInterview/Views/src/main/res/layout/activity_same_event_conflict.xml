@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.btpj.views.eventconflict.same.SameEventConflictActivity"
+        android:orientation="vertical">
+
+        <com.btpj.lib_base.widgets.TitleLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleText="同方向事件冲突" />
+
+        <com.btpj.views.eventconflict.same.MyScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:background="@color/_4cd2f5" />
+
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="800dp"
+                    android:entries="@array/list_item" />
+
+            </LinearLayout>
+        </com.btpj.views.eventconflict.same.MyScrollView>
+    </LinearLayout>
+</layout>

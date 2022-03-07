@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.btpj.eventdispatch">
+    package="com.btpj.eventdispatch" >
 
     <application
         android:allowBackup="true"
@@ -8,11 +8,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Interview">
+        android:theme="@style/Theme.Interview" >
         <activity
-            android:name="com.btpj.views.eventconflict.EventConflictActivity"
+            android:name="com.btpj.views.eventconflict.same.SameEventConflictActivity"
             android:exported="false" />
-        <activity android:name="com.btpj.views.MainViewsActivity">
+        <activity
+            android:name="com.btpj.views.eventconflict.different.EventConflictActivity"
+            android:exported="false" />
+        <activity android:name="com.btpj.views.MainViewsActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
