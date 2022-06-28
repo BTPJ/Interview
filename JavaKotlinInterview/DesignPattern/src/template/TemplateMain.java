@@ -9,6 +9,7 @@ public class TemplateMain {
     public static void main(String[] args) {
         CommonComputer commonComputer = new CommonComputer();
         commonComputer.startup();
+
         System.out.println("-----------------------------------------");
 
         MilitaryComputer militaryComputer = new MilitaryComputer();
