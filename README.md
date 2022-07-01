@@ -1,38 +1,42 @@
-# Interview
+# 说明
+- 项目中的pos后缀文件为processOn流程文件
 
-#### 介绍
-常见面试题Android实例代码以及Java实例代码
+# 项目描述
+- Android相关工程
+
+## 1、buildSrc
+- 引入的一些第三方库的管理，注意buildSrc不能修改名称
+
+## 2、 app
+- 壳工程
+
+## 3、lib_base
+- 基类的封装
+- test类中存在一些Android类的相关测试
+    - SparseArray
+    - ArrayMap
+
+## 4、Handler
+- 学习Handler原理
+
+## 5、Activity
+- Activity相关问题
+
+## 6、JetPack
+- 学习LiveData、ViewModel等Jetpack组件的原理
+
+## 7、MvcMvpMvvm
+- 学习Android常见的MVC、MVP、MVVM架构
+
+## 8、EventDispatch
+- View的事件分发
+
+## 9、IPC
+- Android进程间通信
+
+## 10、EventBusDemo
+- 阅读EventBus源码
+- 自实现一个简单的EventBus
 
 
-#### 软件架构
-软件架构说明
 
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
