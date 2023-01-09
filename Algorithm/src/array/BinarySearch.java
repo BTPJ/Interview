@@ -2,7 +2,7 @@ package array;
 
 /**
  * 二分查找
- * https://leetcode-cn.com/problems/binary-search/
+ * <a href="https://leetcode-cn.com/problems/binary-search/">...</a>
  *
  * @author BTPJ  2021/6/9
  */
@@ -10,7 +10,7 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         int[] nums = {-1, 0, 3, 5, 9, 12};
-        System.out.println("二分查找到的下标为：" + search(nums, 3));
+        System.out.println("二分查找到的下标为：" + search(nums, -1));
     }
 
     /**
@@ -21,14 +21,17 @@ public class BinarySearch {
      * @return 值所在坐标，没找到返回-1
      */
     private static int search(int[] nums, int target) {
+        // 左右指针
         int left = 0, right = nums.length - 1;
         while (left <= right) {
-            int index = left + (right - left) / 2;
-            if (nums[index] == target) return index;
-            if (nums[index] > target) {
-                right = index - 1;
+            // 中间指针
+            int mid = left + (right - left) / 2;
+            if (nums[mid] < target) {
+                left = mid + 1;
+            } else if (nums[mid] == target) {
+                return mid;
             } else {
-                left = index + 1;
+                right = mid - 1;
             }
         }
         return -1;
