@@ -4,7 +4,7 @@ import list.base.ListNode;
 
 /**
  * 反转链表
- * https://leetcode-cn.com/problems/reverse-linked-list/
+ * <a href="https://leetcode-cn.com/problems/reverse-linked-list/"/>
  *
  * @author BTPJ  2021/6/10
  */

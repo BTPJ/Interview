@@ -2,7 +2,7 @@ package array;
 
 /**
  * 二分查找
- * <a href="https://leetcode-cn.com/problems/binary-search/">...</a>
+ * <a href="https://leetcode-cn.com/problems/binary-search/"/>
  *
  * @author BTPJ  2021/6/9
  */

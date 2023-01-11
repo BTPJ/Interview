@@ -4,7 +4,7 @@ import tree.base.TreeNode;
 
 /**
  * 给定一个二叉树，找出其最小深度
- * https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/
+ * <a href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/"/>
  *
  * @author BTPJ  2021/6/9
  */

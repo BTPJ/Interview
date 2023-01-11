@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 回文链表：链表与其反转链表相同
- * https://leetcode-cn.com/problems/palindrome-linked-list/
+ * <a href="https://leetcode-cn.com/problems/palindrome-linked-list/"/>
  *
  * @author BTPJ  2021/6/10
  */

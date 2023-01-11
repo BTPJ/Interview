@@ -5,7 +5,7 @@ import tree.base.TreeNode;
 /**
  * 平衡二叉树
  * 一棵高度平衡二叉树定义为：一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1
- * https://leetcode-cn.com/problems/balanced-binary-tree/
+ * <a href="https://leetcode-cn.com/problems/balanced-binary-tree/"/>
  *
  * @author BTPJ  2021/6/9
  */

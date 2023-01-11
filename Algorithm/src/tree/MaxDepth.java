@@ -4,7 +4,7 @@ import tree.base.TreeNode;
 
 /**
  * 求二叉树的最大深度
- * https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
+ * <a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/"/>
  *
  * @author BTPJ  2021/6/8
  */

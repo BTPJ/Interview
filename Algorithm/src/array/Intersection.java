@@ -7,7 +7,7 @@ import java.util.Set;
 /**
  * 求两个数组的交集
  * 求两个已排序数组的交集
- * https://leetcode-cn.com/problems/intersection-of-two-arrays/
+ * <a href="https://leetcode-cn.com/problems/intersection-of-two-arrays/"/>
  *
  * @author LTP  2021/11/15
  */
