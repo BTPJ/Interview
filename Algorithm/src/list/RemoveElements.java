@@ -22,7 +22,7 @@ public class RemoveElements {
 
     /**
      * 删除链表中的节点，无论是否包含重复节点
-     * 采用双指针的方式，时间复杂度：O(n) 空间复杂度：O(n)
+     * 采用递归的方式，时间复杂度：O(n) 空间复杂度：O(n)
      *
      * @param head 链表
      * @param val  指定值
@@ -44,13 +44,16 @@ public class RemoveElements {
      * @return 删除指定值后的新链表
      */
     public static ListNode removeElements2(ListNode head, int val) {
-        if (head.val == val) return head.next;
-        ListNode pre = head, cur = head.next;
-        while (cur != null && cur.val != val) {
-            pre = cur;
-            cur = cur.next;
+        ListNode listNode = new ListNode(0);
+        listNode.next = head;
+        ListNode pointNode = listNode;
+        while (pointNode.next != null) {
+            if (pointNode.next.val == val) {
+                pointNode.next = pointNode.next.next;
+            } else {
+                pointNode = pointNode.next;
+            }
         }
-        if (cur != null) pre.next = cur.next;
-        return head;
+        return listNode.next;
     }
 }
