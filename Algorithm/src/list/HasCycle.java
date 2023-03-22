@@ -1,9 +1,9 @@
 package list;
 
-import list.base.ListNode;
-
 import java.util.HashSet;
 import java.util.Set;
+
+import list.base.ListNode;
 
 /**
  * 环形链表

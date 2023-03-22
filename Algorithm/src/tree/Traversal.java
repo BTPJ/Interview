@@ -58,15 +58,14 @@ public class Traversal {
      * 前序递归
      *
      * @param root TreeNode
-     * @param res  List
+     * @param list  List
      */
-    private static void preorder(TreeNode root, List<Integer> res) {
-        if (root == null) {
-            return;
-        }
-        res.add(root.val);
-        preorder(root.left, res);
-        preorder(root.right, res);
+    private static void preorder(TreeNode root, List<Integer> list) {
+        if (root == null) return;
+
+        list.add(root.val);
+        preorder(root.left, list);
+        preorder(root.right, list);
     }
 
     /**
@@ -85,15 +84,14 @@ public class Traversal {
      * 中序递归
      *
      * @param root TreeNode
-     * @param res  List
+     * @param list  List
      */
-    private static void inorder(TreeNode root, List<Integer> res) {
-        if (root == null) {
-            return;
-        }
-        inorder(root.left, res);
-        res.add(root.val);
-        inorder(root.right, res);
+    private static void inorder(TreeNode root, List<Integer> list) {
+        if (root == null) return;
+
+        inorder(root.left, list);
+        list.add(root.val);
+        inorder(root.right, list);
     }
 
     /**
@@ -112,14 +110,13 @@ public class Traversal {
      * 后序递归
      *
      * @param root TreeNode
-     * @param res  List
+     * @param list  List
      */
-    private static void postorder(TreeNode root, List<Integer> res) {
-        if (root == null) {
-            return;
-        }
-        postorder(root.left, res);
-        postorder(root.right, res);
-        res.add(root.val);
+    private static void postorder(TreeNode root, List<Integer> list) {
+        if (root == null) return;
+
+        postorder(root.left, list);
+        postorder(root.right, list);
+        list.add(root.val);
     }
 }
