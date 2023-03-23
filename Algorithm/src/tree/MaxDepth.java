@@ -17,13 +17,9 @@ public class MaxDepth {
     }
 
     private static int maxDepth(TreeNode root) {
-        if (root == null) {
-            return 0;
-        } else {
-            int maxLeftHeight = maxDepth(root.left);
-            int maxRightHeight = maxDepth(root.right);
-            // 左右子树的最大深度中的较大者+根结点
-            return Math.max(maxLeftHeight, maxRightHeight) + 1;
-        }
+        if (root == null) return 0;
+
+        // 左右子树的最大深度中的较大者+根结点
+        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 }
