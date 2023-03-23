@@ -12,9 +12,6 @@ import tree.base.TreeNode;
  */
 public class InvertTree {
 
-    public static void main(String[] args) {
-    }
-
     private static TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
 
