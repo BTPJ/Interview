@@ -12,7 +12,7 @@ public class Singleton_DCL {
      * volatile关键字（可见性、防止指令重排、不保证原子性）此处用到了防止指令重排的特性
      * 在一个线程分配了mInstance所指向的内存地址，但并未初始化时（发生指令重排），
      * 第二个线程在第一个判空的位置会判断mInstance不为空从而直接返回当前mInstance，但事实上mInstance并未初始化而造成错误
-     * 具体参考：https://blog.csdn.net/llllllkkkkkooooo/article/details/115360630
+     * 具体参考：<a href="https://blog.csdn.net/llllllkkkkkooooo/article/details/115360630">...</a>
      */
     private static volatile Singleton_DCL mInstance;
 
