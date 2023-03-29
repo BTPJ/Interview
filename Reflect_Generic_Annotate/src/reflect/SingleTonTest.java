@@ -18,7 +18,11 @@ public class SingleTonTest {
         System.out.println(singleTon1 == singleTon3);
     }
 
-
+    /**
+     * 通过反射获取单例
+     *
+     * @return 单例
+     */
     private static SingleTon getInstanceByReflect() {
         try {
             Constructor<SingleTon> constructor = SingleTon.class.getDeclaredConstructor();
