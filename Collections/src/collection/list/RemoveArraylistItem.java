@@ -15,7 +15,7 @@ import java.util.List;
  * 5、使用Iterator迭代器也可以，但需要使用iterator.remove方法而不是list.remove
  * 6、使用java8的removeIf（本质上也是Iterator）
  * <p>
- * 参考：https://www.cnblogs.com/kintanx/p/10708491.html
+ * 参考：<a href="https://www.cnblogs.com/kintanx/p/10708491.html">...</a>
  *
  * @author BTPJ  2021/6/17
  */
@@ -84,7 +84,6 @@ public class RemoveArraylistItem {
 
     /**
      * 使用forEach循环会导致 java.util.ConcurrentModificationException异常
-     *
      *
      * @return list
      */
