@@ -1,7 +1,5 @@
 package array;
 
-import java.util.Arrays;
-
 /**
  * 原地删除（空间复杂度O(1)）有序数组中的重复项
  * 给你一个升序排列的数组nums ，请你原地删除重复出现的元素，使每个元素只出现一次，返回删除后数组的新长度。元素的相对顺序应该保持一致
@@ -17,7 +15,7 @@ public class RemoveDuplicates {
     }
 
     /**
-     * 双指针发
+     * 双指针法
      *
      * @param arr 数组
      * @return 数组
