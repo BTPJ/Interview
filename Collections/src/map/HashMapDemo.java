@@ -35,8 +35,6 @@ public class HashMapDemo {
         System.out.println(map.put(null,"1"));
         System.out.println(map.size());
         System.out.println(map.get("LTP"));
-
-        System.out.println((12345&15)==12345%16);
     }
 
 }
