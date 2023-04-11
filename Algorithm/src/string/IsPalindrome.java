@@ -26,3 +26,4 @@ public class IsPalindrome {
         return sb1.toString().equals(sb2.toString());
     }
 }
+
