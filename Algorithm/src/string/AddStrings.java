@@ -11,8 +11,8 @@ package string;
 public class AddStrings {
 
     public static void main(String[] args) {
-//        System.out.println(addStrings("11", "123"));
-//        System.out.println(addStrings("456", "77"));
+        System.out.println(addStrings("11", "123"));
+        System.out.println(addStrings("456", "77"));
         System.out.println(addStrings("9", "99"));
     }
 
