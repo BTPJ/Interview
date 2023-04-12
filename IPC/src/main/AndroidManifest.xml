@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.btpj.ipc">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -9,17 +8,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Interview">
-        <activity android:name=".IPCActivity">
+        <activity
+            android:name=".IPCActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".binder_pool.BinderPoolActivity" />
-        <activity android:name=".aidl.AIDLActivity" />
-        <activity android:name=".binder.BinderActivity" />
-        <activity android:name=".messenger.MessengerActivity" />
+        <activity
+            android:name=".binder_pool.BinderPoolActivity"
+            android:exported="true" />
+        <activity
+            android:name=".aidl.AIDLActivity"
+            android:exported="true" />
+        <activity
+            android:name=".binder.BinderActivity"
+            android:exported="true" />
+        <activity
+            android:name=".messenger.MessengerActivity"
+            android:exported="true" />
 
         <service
             android:name=".binder.BinderService"
@@ -32,6 +41,7 @@
             android:process=":remote1" />
         <service
             android:name=".aidl.BookManagerService"
+            android:exported="false"
             android:process=":remote2" />
 
         <service

@@ -34,8 +34,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     kotlinOptions {
@@ -45,6 +45,7 @@ android {
     buildFeatures {
         dataBinding true
     }
+    namespace 'com.btpj.interview'
 }
 
 dependencies {
@@ -54,7 +55,7 @@ dependencies {
     implementation project(':Handler')
     implementation project(':Views')
     implementation project(':MvcMvpMvvm')
-    implementation project(':IPC')
+//    implementation project(':IPC')
     implementation project(':Jetpack')
     implementation project(':EventBusDemo')
 }

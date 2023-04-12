@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.btpj.mvcmvpmvvm">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -9,16 +8,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Interview">
-        <activity android:name=".StructureActivity">
+        <activity
+            android:name=".StructureActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mvc.MvcActivity" />
-        <activity android:name=".mvp.view.MvpActivity" />
-        <activity android:name=".mvvm.MvvmActivity" />
+        <activity
+            android:name=".mvc.MvcActivity"
+            android:exported="true" />
+        <activity
+            android:name=".mvp.view.MvpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".mvvm.MvvmActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
