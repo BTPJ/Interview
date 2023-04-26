@@ -3,8 +3,19 @@
     package="com.btpj.eventdispatch">
 
     <application>
-        <activity android:name="com.btpj.views.MainViewsActivity" />
-        <activity android:name="com.btpj.views.eventdispatch.EventDispatchActivity" />
+        <activity
+            android:name="com.btpj.views.MainViewsActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name="com.btpj.views.eventdispatch.EventDispatchActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.btpj.views.eventconflict.same.SameEventConflictActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.btpj.views.eventconflict.different.EventConflictActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
