@@ -3,7 +3,7 @@ package array;
 /**
  * 最大子数组和
  * 给你一个整数数组 nums ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和
- * <a href="https://leetcode.cn/problems/maximum-subarray/?envType=study-plan&id=shu-ju-jie-gou-ru-men&plan=data-structures&plan_progress=xhd088o3">...</a>]
+ * <a href="https://leetcode.cn/problems/maximum-subarray/">...</a>]
  *
  * @author BTPJ  2023/3/10
  */
