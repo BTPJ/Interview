@@ -22,8 +22,8 @@ class EventBusActivity : BaseBindingActivity<ActivityEventbusBinding>(R.layout.a
          * EventBusActivity启动
          * @param context Context
          */
-        fun launch(context: Context) {
-            context.startActivity(Intent(context, EventBusActivity::class.java))
+        fun newIntent(context: Context): Intent {
+            return Intent(context, EventBusActivity::class.java)
         }
     }
 

@@ -1,29 +1,28 @@
 import com.btpj.dependencies.Versions
 
-plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-    id 'kotlin-kapt'
+if (isBuildApp.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
 }
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion Versions.compileSdkVersion
     buildToolsVersion Versions.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.btpj.interview"
+        if (isBuildApp.toBoolean()) {
+            applicationId "com.btpj.hook"
+        }
         minSdkVersion Versions.minSdkVersion
         targetSdkVersion Versions.targetSdkVersion
         versionCode Versions.versionCode
         versionName Versions.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-//        kapt {
-//            arguments {
-//                arg("AROUTER_MODULE_NAME", project.getName())
-//            }
-//        }
     }
 
     buildTypes {
@@ -32,31 +31,33 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-
     kotlinOptions {
         jvmTarget = '17'
+    }
+
+    sourceSets {
+        main {
+            if (isBuildApp.toBoolean()) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            }
+        }
     }
 
     buildFeatures {
         dataBinding true
     }
-    namespace 'com.btpj.interview'
+    namespace 'com.btpj.hook'
 }
 
 dependencies {
     implementation project(':lib_base')
-
-    implementation project(':Activity')
-    implementation project(':Handler')
-    implementation project(':Views')
-    implementation project(':MvcMvpMvvm')
-//    implementation project(':IPC')
-    implementation project(':Jetpack')
-    implementation project(':EventBusDemo')
-    implementation project(':Hook')
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
 }

@@ -1,13 +1,11 @@
 package com.btpj.androidinterview
 
-import android.util.LongSparseArray
-import android.util.SparseArray
-import android.util.SparseIntArray
-import android.util.SparseLongArray
+
 import com.btpj.activity.AboutActivity
 import com.btpj.eventbusdemo.EventBusActivity
 import com.btpj.views.MainViewsActivity
 import com.btpj.handler.HandlerActivity
+import com.btpj.hook.HookActivity
 import com.btpj.interview.R
 import com.btpj.interview.databinding.ActivityMainBinding
 //import com.btpj.ipc.IPCActivity
@@ -58,7 +56,14 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>(R.layout.activity_
             }
 
             // EventBus
-            btnEventBus.setOnClickListener { EventBusActivity.launch(this@MainActivity) }
+            btnEventBus.setOnClickListener {
+                startActivity(EventBusActivity.newIntent(this@MainActivity))
+            }
+
+            // hook
+            btnHook.setOnClickListener {
+                startActivity(HookActivity.newIntent(this@MainActivity))
+            }
         }
     }
 }
