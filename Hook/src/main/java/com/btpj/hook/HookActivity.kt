@@ -19,8 +19,13 @@ class HookActivity : BaseBindingActivity<ActivityHookBinding>(R.layout.activity_
     }
 
     override fun setupViews() {
-        mBinding.btnNav.setOnClickListener {
-            startActivity(OccupyActivity.newIntent(this))
+        mBinding.apply {
+            btnNav.setOnClickListener {
+                startActivity(TargetActivity.newIntent(this@HookActivity))
+            }
+            btnNav2.setOnClickListener {
+                startActivity(Placeholder2Activity.newIntent(this@HookActivity))
+            }
         }
     }
 }

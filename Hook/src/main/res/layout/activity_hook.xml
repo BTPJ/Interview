@@ -31,5 +31,16 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="HardcodedText" />
 
+        <Button
+            android:id="@+id/btn_nav2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="启动Placeholder2Activity"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_nav"
+            tools:ignore="HardcodedText" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -2,7 +2,7 @@ package com.btpj.hook
 
 import android.content.Context
 import android.content.Intent
-import com.btpj.hook.databinding.ActivityOccupyBinding
+import com.btpj.hook.databinding.ActivityPlaceholderBinding
 import com.btpj.lib_base.base.BaseBindingActivity
 
 /**
@@ -10,11 +10,11 @@ import com.btpj.lib_base.base.BaseBindingActivity
  *
  * @author LTP 2023/5/15
  */
-class OccupyActivity : BaseBindingActivity<ActivityOccupyBinding>(R.layout.activity_occupy) {
+class PlaceholderActivity : BaseBindingActivity<ActivityPlaceholderBinding>(R.layout.activity_placeholder) {
 
     companion object {
         fun newIntent(context: Context): Intent {
-            return Intent(context, OccupyActivity::class.java)
+            return Intent(context, PlaceholderActivity::class.java)
         }
     }
 

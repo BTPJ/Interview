@@ -19,6 +19,7 @@ object LogUtil {
      * @param isDebug   true: 调试状态即打印所有日志
      *                false: 上线状态即关闭所有日志的打印
      */
+    @JvmStatic
     fun isDebug(isDebug: Boolean) {
         this.isDebug = isDebug
     }
@@ -28,6 +29,7 @@ object LogUtil {
      *
      * @param tag 打印日志的Tag
      */
+    @JvmStatic
     fun setTag(tag: String) {
         this.tag = tag
     }
@@ -38,6 +40,7 @@ object LogUtil {
      * @param tag 打印的Tag
      * @param msg 打印的信息
      */
+    @JvmStatic
     fun v(tag: String, msg: String) {
         if (isDebug) {
             Log.v(tag, msg)
@@ -49,6 +52,7 @@ object LogUtil {
      *
      * @param msg 打印的信息
      */
+    @JvmStatic
     fun v(msg: String) {
         v(msg)
     }
@@ -59,6 +63,7 @@ object LogUtil {
      * @param tag 打印的Tag
      * @param msg 打印的信息
      */
+    @JvmStatic
     fun d(tag: String, msg: String) {
         if (isDebug) {
             Log.d(tag, msg)
@@ -70,6 +75,7 @@ object LogUtil {
      *
      * @param msg 打印的信息
      */
+    @JvmStatic
     fun d(msg: String) {
         d(tag, msg)
     }
@@ -80,6 +86,7 @@ object LogUtil {
      * @param tag 打印的Tag
      * @param msg 打印的信息
      */
+    @JvmStatic
     fun i(tag: String, msg: String) {
         if (isDebug) {
             Log.i(tag, msg)
@@ -91,6 +98,7 @@ object LogUtil {
      *
      * @param msg 打印的信息
      */
+    @JvmStatic
     fun i(msg: String) {
         i(tag, msg)
     }
@@ -101,6 +109,7 @@ object LogUtil {
      * @param tag 打印的Tag
      * @param msg 打印的信息
      */
+    @JvmStatic
     fun w(tag: String, msg: String) {
         if (isDebug) {
             Log.w(tag, msg)
@@ -112,6 +121,7 @@ object LogUtil {
      *
      * @param msg 打印的信息
      */
+    @JvmStatic
     fun w(msg: String) {
         w(tag, msg)
     }
@@ -122,6 +132,7 @@ object LogUtil {
      * @param tag 打印的Tag
      * @param msg 打印的信息
      */
+    @JvmStatic
     fun e(tag: String, msg: String) {
         if (isDebug) {
             Log.e(tag, msg)
@@ -133,6 +144,7 @@ object LogUtil {
      *
      * @param msg 打印的信息
      */
+    @JvmStatic
     fun e(msg: String) {
         e(tag, msg)
     }

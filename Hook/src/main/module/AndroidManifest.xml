@@ -7,7 +7,7 @@
             android:name=".HookActivity"
             android:exported="true" />
         <activity
-            android:name=".OccupyActivity"
+            android:name=".PlaceholderActivity"
             android:exported="false" />
     </application>
 

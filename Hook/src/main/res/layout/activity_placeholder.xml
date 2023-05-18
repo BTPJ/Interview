@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".OccupyActivity">
+        tools:context=".PlaceholderActivity">
 
         <com.btpj.lib_base.widgets.TitleLayout
             android:layout_width="match_parent"
