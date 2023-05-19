@@ -40,6 +40,7 @@ class HandlerActivity : BaseActivity(R.layout.activity_handler) {
             when (msg.what) {
                 1, 2 -> activityReference.get()?.findViewById<TextView>(R.id.tv_time)?.text =
                     msg.obj.toString()
+
                 3 -> LogUtil.d(msg.obj.toString()) // 这里由于是向子线程looper发的消息所以当前线程为子线程，无法更新UI
             }
         }
@@ -89,14 +90,15 @@ class HandlerActivity : BaseActivity(R.layout.activity_handler) {
             super.run()
             Looper.prepare()
             myLooper = Looper.myLooper()!!
-            // IdelHandler回调的时机是消息队列中的非延迟消息都处理完毕处于暂时空闲状态
+            // IdleHandler回调的时机是消息队列中的非延迟消息都处理完毕处于暂时空闲状态
             myLooper.queue.addIdleHandler {
                 LogUtil.d("回调IdleHandler")
                 // 返回false表示执行一次后会移除该回调，返回true则会只要空闲就会回调
                 return@addIdleHandler true
             }
             val threadHandler = MyHandler(WeakReference(this@HandlerActivity), myLooper)
-            val obtainMessage = threadHandler.obtainMessage(3, "子线程中的handler向子线程的Looper发消息")
+            val obtainMessage =
+                threadHandler.obtainMessage(3, "子线程中的handler向子线程的Looper发消息")
             threadHandler.sendMessage(obtainMessage)
             threadHandler.sendEmptyMessageDelayed(4, 3000)
             Looper.loop()
