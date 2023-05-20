@@ -26,10 +26,11 @@ public class TwoSum {
      * @return 结果数组
      */
     private static int[] twoSum1(int[] nums, int target) {
+        // 借助HashMap，key为target-nums[index],value为index
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (map.containsKey(nums[i])) {
-                return new int[]{i, map.get(nums[i])};
+                return new int[]{map.get(nums[i]), i};
             } else {
                 map.put(target - nums[i], i);
             }
@@ -46,7 +47,7 @@ public class TwoSum {
      */
     private static int[] twoSum2(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
-            for (int j = nums.length - 1; j > i; j--) {
+            for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
                     return new int[]{i, j};
                 }

@@ -10,7 +10,7 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         int[] nums = {-1, 0, 3, 5, 9, 12};
-        System.out.println("二分查找到的下标为：" + search(nums, -1));
+        System.out.println("二分查找到的下标为：" + search(nums, 2));
     }
 
     /**
@@ -22,18 +22,21 @@ public class BinarySearch {
      */
     private static int search(int[] nums, int target) {
         // 左右指针
-        int left = 0, right = nums.length - 1;
-        while (left <= right) {
-            // 中间指针
-            int mid = left + (right - left) / 2;
-            if (nums[mid] < target) {
-                left = mid + 1;
-            } else if (nums[mid] == target) {
-                return mid;
-            } else {
-                right = mid - 1;
+        int leftPoint = 0, rightPoint = nums.length - 1;
+        int middlePoint = leftPoint + (rightPoint - leftPoint) / 2;
+        while (leftPoint <= rightPoint) {
+            if (nums[middlePoint] == target) {
+                return middlePoint;
             }
+
+            if (nums[middlePoint] > target) {
+                rightPoint = middlePoint - 1;
+            } else {
+                leftPoint = middlePoint + 1;
+            }
+            middlePoint = leftPoint + (rightPoint - leftPoint) / 2;
         }
+
         return -1;
     }
 }

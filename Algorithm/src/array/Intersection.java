@@ -1,8 +1,6 @@
 package array;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 求两个数组的交集
@@ -18,62 +16,70 @@ public class Intersection {
         int[] num1 = {4, 9, 5};
         int[] num2 = {9, 4, 9, 8, 4};
         System.out.println(Arrays.toString(getIntersection1(num1, num2)));
+        System.out.println(Arrays.toString(getIntersection2(num1, num2)));
 
         // 已排序
         int[] num3 = {4, 5, 7, 8, 8};
         int[] num4 = {4, 7, 8, 8, 9, 10};
-        System.out.println(Arrays.toString(getIntersection2(num3, num4)));
+        System.out.println(Arrays.toString(getIntersection3(num3, num4)));
     }
 
     /**
      * 求两个数组的交集
      *
-     * @param array1 数组1
-     * @param array2 数组2
+     * @param nums1 数组1
+     * @param nums2 数组2
      * @return 数组的交集
      */
-    private static int[] getIntersection1(int[] array1, int[] array2) {
-        if (array1 == null || array1.length == 0 || array2 == null || array2.length == 0) {
-            return null;
+    private static int[] getIntersection1(int[] nums1, int[] nums2) {
+        Set<Integer> set = new HashSet<>(nums1.length);
+        Set<Integer> resultSet = new HashSet<>();
+        for (int i : nums1) {
+            set.add(i);
         }
-
-        Set<Integer> set1 = new HashSet<>();
-        Set<Integer> set2 = new HashSet<>();
-        Arrays.stream(array1).forEach(set1::add);
-        Arrays.stream(array2).forEach(i -> {
-            if (set1.contains(i)) {
-                set2.add(i);
+        for (int i : nums2) {
+            if (set.contains(i)) {
+                resultSet.add(i);
             }
-        });
-        return set2.stream().mapToInt(Integer::intValue).toArray();
+        }
+        return resultSet.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    /**
+     * 求两个数组的交集(先排序再一次遍历)
+     *
+     * @param nums1 数组1
+     * @param nums2 数组2
+     * @return 数组的交集
+     */
+    private static int[] getIntersection2(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        return getIntersection3(nums1, nums2);
     }
 
     /**
      * 求两个有序数组的交集
      *
-     * @param array1 数组1
-     * @param array2 数组2
+     * @param nums1 数组1
+     * @param nums2 数组2
      * @return 有序数组的交集
      */
-    private static int[] getIntersection2(int[] array1, int[] array2) {
-        if (array1 == null || array1.length == 0 || array2 == null || array2.length == 0) {
-            return null;
-        }
-
-        int index1 = 0, index2 = 0;
-        Set<Integer> set = new HashSet<>();
-        while (index1 < array1.length && index2 < array2.length) {
-            if (array1[index1] < array2[index2]) {
-                index1++;
-            } else if (array1[index1] == array2[index2]) {
-                set.add(array1[index1]);
-                index1++;
-                index2++;
+    private static int[] getIntersection3(int[] nums1, int[] nums2) {
+        Set<Integer> resultSet = new HashSet<>();
+        // 分别指向nums1、nums2的双指针
+        int nums1Point = 0, nums2Point = 0;
+        while (nums1Point < nums1.length && nums2Point < nums2.length) {
+            if (nums1[nums1Point] == nums2[nums2Point]) {
+                resultSet.add(nums1[nums1Point]);
+                nums1Point++;
+                nums2Point++;
+            } else if (nums1[nums1Point] > nums2[nums2Point]) {
+                nums2Point++;
             } else {
-                index2++;
+                nums1Point++;
             }
         }
-
-        return set.stream().mapToInt(Integer::intValue).toArray();
+        return resultSet.stream().mapToInt(Integer::intValue).toArray();
     }
 }

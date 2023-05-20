@@ -12,17 +12,42 @@ package array;
 public class MaxProfit {
 
     public static void main(String[] args) {
-        int[] nums = {7, 1, 5, 3, 6, 4};
+        int[] nums = {7, 1, 5, 3, 6, 4, 8};
         System.out.println(MaxProfit.maxProfit(nums));
+        System.out.println(MaxProfit.maxProfit2(nums));
     }
 
+    /**
+     * 一次遍历,一个变量记录最低值，一个变量记录最大利润
+     *
+     * @param prices 数组
+     * @return 最大利润
+     */
     private static int maxProfit(int[] prices) {
-        if (prices.length <= 1) return 0;
-
-        int max = 0, min = prices[0];
+        int min = Integer.MAX_VALUE;
+        int max = 0;
         for (int price : prices) {
-            min = Math.min(min, price);
-            max = Math.max(max, price - min);
+            if (price < min) {
+                min = price;
+            } else if (price - min > max) {
+                max = price - min;
+            }
+        }
+        return max;
+    }
+
+    /**
+     * 双重for循环
+     *
+     * @param prices 数组
+     * @return 最大利润
+     */
+    private static int maxProfit2(int[] prices) {
+        int max = 0;
+        for (int i = 0; i < prices.length; i++) {
+            for (int j = i + 1; j < prices.length; j++) {
+                max = Math.max(prices[j] - prices[i], max);
+            }
         }
         return max;
     }
