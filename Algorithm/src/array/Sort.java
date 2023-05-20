@@ -11,17 +11,17 @@ public class Sort {
     private static final int[] arr = {12, 13, 4, 7, 2, 21, 8};
 
     public static void main(String[] args) {
+        // 快速排序
+        quickSort(arr, 0, arr.length - 1);
+
+        // 插入排序
+        //  insertSort(arr);
+
         // 冒泡排序
         // maoPaoSort(arr);
 
         // 选择排序
         // chooseSort(arr);
-
-        // 插入排序
-//        insertSort(arr);
-
-        // 快速排序
-        quickSort(arr, 0, arr.length - 1);
 
         for (int i : arr) {
             System.out.print(i + ",");
