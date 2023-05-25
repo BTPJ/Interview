@@ -11,4 +11,5 @@ java {
 dependencies {
     // 添加协程依赖
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+    implementation("org.testng:testng:6.9.6")
 }
