@@ -7,8 +7,8 @@ plugins {
 }
 
 android {
-    compileSdkVersion Versions.compileSdkVersion
-    buildToolsVersion Versions.buildToolsVersion
+    namespace 'com.btpj.interview'
+    compileSdk Versions.compileSdk
 
     defaultConfig {
         applicationId "com.btpj.interview"
@@ -45,7 +45,6 @@ android {
     buildFeatures {
         dataBinding true
     }
-    namespace 'com.btpj.interview'
 }
 
 dependencies {

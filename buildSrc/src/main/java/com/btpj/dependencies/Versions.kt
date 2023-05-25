@@ -7,8 +7,7 @@ package com.btpj.dependencies
  */
 object Versions {
     /**----------- Android-------------*/
-    const val compileSdkVersion = 33
-    const val buildToolsVersion = "33.0.0"
+    const val compileSdk = 33
     const val minSdkVersion = 21
     const val targetSdkVersion = 33
     const val versionCode = 1

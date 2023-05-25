@@ -7,6 +7,7 @@ import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import com.btpj.lib_base.R
+import kotlin.math.max
 
 /**
  * 流式布局
@@ -61,10 +62,10 @@ class FlowLayout(context: Context, attrs: AttributeSet?) : ViewGroup(context, at
 
     @SuppressLint("DrawAllocation", "SwitchIntDef")
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        val widthSpecMode = View.MeasureSpec.getMode(widthMeasureSpec)
-        val widthSpecSize = View.MeasureSpec.getSize(widthMeasureSpec)
-        val heightSpecMode = View.MeasureSpec.getMode(heightMeasureSpec)
-        val heightSpecSize = View.MeasureSpec.getSize(heightMeasureSpec)
+        val widthSpecMode = MeasureSpec.getMode(widthMeasureSpec)
+        val widthSpecSize = MeasureSpec.getSize(widthMeasureSpec)
+        val heightSpecMode = MeasureSpec.getMode(heightMeasureSpec)
+        val heightSpecSize = MeasureSpec.getSize(heightMeasureSpec)
         var maxLineHeight = 0
         var resultWidth: Int
         val resultHeight: Int
@@ -74,7 +75,7 @@ class FlowLayout(context: Context, attrs: AttributeSet?) : ViewGroup(context, at
         var lineIndex = 0
 
         // 若FlowLayout指定了MATCH_PARENT或固定宽度，则需要使子View换行
-        if (widthSpecMode == View.MeasureSpec.EXACTLY) {
+        if (widthSpecMode == MeasureSpec.EXACTLY) {
             resultWidth = widthSpecSize
             measuredChildCount = 0
             // 下一个子View的position
@@ -141,6 +142,7 @@ class FlowLayout(context: Context, attrs: AttributeSet?) : ViewGroup(context, at
                     childPositionY + maxLineHeight + paddingBottom,
                     heightSpecSize
                 )
+
                 else -> heightSpecSize
             }
         } else {
@@ -285,7 +287,7 @@ class FlowLayout(context: Context, attrs: AttributeSet?) : ViewGroup(context, at
                     nextChildPositionX + childWidth,
                     nextChildPositionY + childHeight
                 )
-                lineHeight = Math.max(lineHeight, childHeight)
+                lineHeight = max(lineHeight, childHeight)
                 nextChildPositionX += childWidth + mChildHorizontalSpacing
             }
 

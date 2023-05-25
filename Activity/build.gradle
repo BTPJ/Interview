@@ -10,8 +10,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion Versions.compileSdkVersion
-    buildToolsVersion Versions.buildToolsVersion
+    compileSdk Versions.compileSdk
 
     defaultConfig {
         if (isBuildApp.toBoolean()) {

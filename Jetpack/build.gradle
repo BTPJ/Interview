@@ -1,5 +1,4 @@
 import com.btpj.dependencies.Versions
-import com.btpj.dependencies.Deps
 
 if (isBuildApp.toBoolean()) {
     apply plugin: 'com.android.application'
@@ -11,8 +10,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdk 33
-    buildToolsVersion '33.0.0'
+    compileSdk Versions.compileSdk
 
     defaultConfig {
         if (isBuildApp.toBoolean()) {
