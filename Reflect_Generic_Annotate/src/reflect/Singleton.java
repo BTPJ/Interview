@@ -5,22 +5,22 @@ package reflect;
  *
  * @author BTPJ  2023/3/28
  */
-public class SingleTon {
+public class Singleton {
 
-    private static volatile SingleTon mInstance;
+    private static volatile Singleton mInstance;
 
-    private SingleTon() {
+    private Singleton() {
         if (mInstance != null) {
             System.out.println("不能破解单例");
             throw new RuntimeException("请不要尝试破解单例");
         }
     }
 
-    public static SingleTon getInstance() {
+    public static Singleton getInstance() {
         if (mInstance == null) {
-            synchronized (SingleTon.class) {
+            synchronized (Singleton.class) {
                 if (mInstance == null) {
-                    mInstance = new SingleTon();
+                    mInstance = new Singleton();
                 }
             }
         }

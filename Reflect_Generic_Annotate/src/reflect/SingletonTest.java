@@ -7,15 +7,15 @@ import java.lang.reflect.Constructor;
  *
  * @author BTPJ  2023/3/28
  */
-public class SingleTonTest {
+public class SingletonTest {
 
     public static void main(String[] args) {
-        SingleTon singleTon1 = SingleTon.getInstance();
-        SingleTon singleTon2 = SingleTon.getInstance();
-        System.out.println(singleTon1 == singleTon2);
+        Singleton singleton1 = Singleton.getInstance();
+        Singleton singleton2 = Singleton.getInstance();
+        System.out.println(singleton1 == singleton2);
 
-        SingleTon singleTon3 = getInstanceByReflect();
-        System.out.println(singleTon1 == singleTon3);
+        Singleton singleton3 = getInstanceByReflect();
+        System.out.println(singleton1 == singleton3);
     }
 
     /**
@@ -23,9 +23,9 @@ public class SingleTonTest {
      *
      * @return 单例
      */
-    private static SingleTon getInstanceByReflect() {
+    private static Singleton getInstanceByReflect() {
         try {
-            Constructor<SingleTon> constructor = SingleTon.class.getDeclaredConstructor();
+            Constructor<Singleton> constructor = Singleton.class.getDeclaredConstructor();
             constructor.setAccessible(true);
             return constructor.newInstance();
         } catch (Exception e) {

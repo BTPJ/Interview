@@ -12,10 +12,10 @@ public class Sort {
 
     public static void main(String[] args) {
         // 快速排序
-        quickSort(arr, 0, arr.length - 1);
+//        quickSort(arr, 0, arr.length - 1);
 
         // 插入排序
-        //  insertSort(arr);
+        insertSort(arr);
 
         // 冒泡排序
         // maoPaoSort(arr);
@@ -66,29 +66,30 @@ public class Sort {
     }
 
     /**
-     * 插入排序
+     * 插入排序O(n^2)
      * 左边表示已排序右边表示未排序，将右边的数移到左边去比较
      *
      * @param arr 要排序的数组
      */
     private static void insertSort(int[] arr) {
-        int j;
-        for (int i = 1; i < arr.length; i++) { // i表示第一个未排序的元素，也就是需要插入的元素
-            int temp = arr[i]; // 每次将要插入的元素保存到temp
-            for (j = i - 1; j >= 0; j--) { // 拿着已排序序列的元素降序逐一与有序序列进行比较寻找插入点
-                if (temp > arr[j]) {
+        int j;// 表示比较的位置
+        for (int i = 1; i < arr.length; i++) { // 从1开始，毕竟第一个元素自己本身无需排
+            int temp = arr[i];  // 将要插入的元素存进temp,操作元素会与左侧的已排序元素逐个对比
+            for (j = i - 1; j >= 0; j--) { // 遍历左侧元素
+                if (temp > arr[j]) { // 当大于左侧元素时直接结束循环
                     break;
-                } else {
+                } else { // 不大于时，逐个向右移动
                     arr[j + 1] = arr[j];
                 }
             }
-            arr[j + 1] = temp; //  将要插入的temp插入到插入点之后一个元素
+            arr[j + 1] = temp; // 将要插入的元素插进break位置（刚好比他小）的后一位
         }
     }
 
     /**
      * 快速排序：通过划分将待排序的序列分成前后两部分，其中前一部分的数据都比后一部分的数据要小，
      * 然后再递归调用函数对两部分的序列分别进行快速排序，以此使整个序列达到有序
+     * O(nlogn)
      *
      * @param arr   数组
      * @param start 起始位置
