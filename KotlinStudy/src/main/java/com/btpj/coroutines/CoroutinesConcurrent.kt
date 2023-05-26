@@ -17,13 +17,13 @@ import java.util.concurrent.locks.ReentrantLock
 import kotlin.system.measureTimeMillis
 
 /**
- * 协程的几种同步方案对比
+ * 协程的几种并发安全方案对比
  * AtomicInteger（原子操作）> ReentrantLock（可重入锁） > synchronized（线程同步锁）
  * > Semaphore（协程信号量限制） > actor通信并发同步模型 > Mutex（协程互斥锁）
  *
  * @author LTP  2023/5/25
  */
-object CoroutinesSync {
+object CoroutinesConcurrent {
 
     @JvmStatic
     fun main(args: Array<String>) {
