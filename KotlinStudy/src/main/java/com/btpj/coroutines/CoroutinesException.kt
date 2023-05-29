@@ -23,8 +23,8 @@ class CoroutinesException {
      * 方式1：直接在异常位置try-catch
      */
     @Test
-    fun catchMainCoroutineException() = runBlocking {
-        val job = CoroutineScope(Dispatchers.IO).launch {
+    fun catchMainCoroutineException(): Unit = runBlocking {
+        CoroutineScope(Dispatchers.IO).launch {
             delay(1000)
             try {
                 throw Exception("协程抛出异常")
