@@ -54,7 +54,7 @@ dependencies {
     implementation project(':Handler')
     implementation project(':Views')
     implementation project(':MvcMvpMvvm')
-//    implementation project(':IPC')
+    implementation project(':IPC')
     implementation project(':Jetpack')
     implementation project(':EventBusDemo')
     implementation project(':Hook')

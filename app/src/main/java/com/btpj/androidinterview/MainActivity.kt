@@ -1,6 +1,5 @@
 package com.btpj.androidinterview
 
-
 import com.btpj.activity.AboutActivity
 import com.btpj.eventbusdemo.EventBusActivity
 import com.btpj.views.MainViewsActivity
@@ -8,6 +7,7 @@ import com.btpj.handler.HandlerActivity
 import com.btpj.hook.HookActivity
 import com.btpj.interview.R
 import com.btpj.interview.databinding.ActivityMainBinding
+import com.btpj.ipc.IPCActivity
 //import com.btpj.ipc.IPCActivity
 import com.btpj.jetpack.JetpackActivity
 import com.btpj.lib_base.base.BaseBindingActivity
@@ -39,7 +39,7 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>(R.layout.activity_
 
             // IPC通信
             btnIpc.setOnClickListener {
-//                startActivity(IPCActivity.newIntent(this@MainActivity))
+                startActivity(IPCActivity.newIntent(this@MainActivity))
             }
 
             // MVC、MVP、MVVM
