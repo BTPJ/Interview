@@ -29,10 +29,11 @@ public class HashMapDemo {
         // 放置在Node链表的Next位置；如果链表长度超过8时便会将链表转化为红黑树并重新插入
         // 5、最后判断HashMap存储的元素是否超过了阈值，超过阈值便会执行resize扩容操作，并且每次扩容都是之前的2倍。
         // 扩容后重新进行hash&(capacity-1)计算元素的插入位置重新插入
-        map.put("LTP", "BTPJ");
+//        map.put("LTP", "BTPJ");
 //        System.out.println(map.putIfAbsent("LTP", "BTPJ1"));
-        System.out.println(map.put("LTP", "BTPJ1"));
-        System.out.println(map.put(null,"1"));
+//        System.out.println(map.put("LTP", "BTPJ1"));
+        System.out.println(map.put("LTP","1"));
+        System.out.println(map.put("LTP","2"));
         System.out.println(map.size());
         System.out.println(map.get("LTP"));
     }
