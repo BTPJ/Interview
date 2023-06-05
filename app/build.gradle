@@ -12,8 +12,8 @@ android {
 
     defaultConfig {
         applicationId "com.btpj.interview"
-        minSdkVersion Versions.minSdkVersion
-        targetSdkVersion Versions.targetSdkVersion
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
         versionCode Versions.versionCode
         versionName Versions.versionName
 
@@ -56,6 +56,6 @@ dependencies {
     implementation project(':MvcMvpMvvm')
     implementation project(':IPC')
     implementation project(':Jetpack')
-    implementation project(':EventBusDemo')
+    implementation project(':EventBusSource')
     implementation project(':Hook')
 }

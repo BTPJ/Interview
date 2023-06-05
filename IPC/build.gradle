@@ -18,8 +18,8 @@ android {
         if (isBuildApp.toBoolean()) {
             applicationId "com.btpj.ipc"
         }
-        minSdkVersion Versions.minSdkVersion
-        targetSdkVersion Versions.targetSdkVersion
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
         versionCode Versions.versionCode
         versionName Versions.versionName
     }

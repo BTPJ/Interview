@@ -17,8 +17,8 @@ android {
         if (isBuildApp.toBoolean()) {
             applicationId "com.btpj.eventdispatch"
         }
-        minSdk Versions.minSdkVersion
-        targetSdk Versions.targetSdkVersion
+        minSdk Versions.minSdk
+        targetSdk Versions.targetSdk
         versionCode Versions.versionCode
         versionName Versions.versionName
 
