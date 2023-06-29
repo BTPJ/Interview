@@ -20,8 +20,8 @@ class AboutActivity : BaseBindingActivity<ActivityAboutBinding>(R.layout.activit
          *
          * @param context Context
          */
-        fun launch(context: Context) {
-            context.startActivity(Intent(context, AboutActivity::class.java))
+        fun newIntent(context: Context): Intent {
+            return Intent(context, AboutActivity::class.java)
         }
     }
 
