@@ -8,12 +8,9 @@ import com.btpj.hook.HookActivity
 import com.btpj.interview.R
 import com.btpj.interview.databinding.ActivityMainBinding
 import com.btpj.ipc.IPCActivity
-//import com.btpj.ipc.IPCActivity
 import com.btpj.jetpack.JetpackActivity
 import com.btpj.lib_base.base.BaseBindingActivity
 import com.btpj.mvcmvpmvvm.StructureActivity
-
-//import com.alibaba.android.arouter.launcher.ARouter
 
 /**
  * 壳工程
@@ -25,7 +22,9 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>(R.layout.activity_
     override fun setupViews() {
         mBinding.apply {
             // Activity
-            btnActivity.setOnClickListener { AboutActivity.launch(this@MainActivity) }
+            btnActivity.setOnClickListener {
+                startActivity(AboutActivity.newIntent(this@MainActivity))
+            }
 
             // Handler
             btnHandler.setOnClickListener {
@@ -45,9 +44,6 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>(R.layout.activity_
             // MVC、MVP、MVVM
             btnMvcMvpMvvm.setOnClickListener {
                 startActivity(StructureActivity.newIntent(this@MainActivity))
-
-                // Arouter（此处暂时不兼容AndroidX）
-                //  ARouter.getInstance().build("/MvcMvpMvvm/mvc").navigation()
             }
 
             // Kotlin & 协程
@@ -60,7 +56,7 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>(R.layout.activity_
                 startActivity(EventBusActivity.newIntent(this@MainActivity))
             }
 
-            // hook
+            // Hook
             btnHook.setOnClickListener {
                 startActivity(HookActivity.newIntent(this@MainActivity))
             }
