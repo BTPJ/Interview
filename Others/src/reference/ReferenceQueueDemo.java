@@ -18,17 +18,21 @@ public class ReferenceQueueDemo {
     }
 
     private static void testWeakReference() {
-        // 软引用对象中指向了一个长度为300000000个元素的整形数组
-        ReferenceQueue<int[]> referenceQueue = new ReferenceQueue<>();
-        WeakReference<int[]> weakReference = new WeakReference<>(new int[5], referenceQueue);
-//        WeakReference<int[]> weakReference = new WeakReference<>(new int[6], referenceQueue);
-        System.out.println("调用GC前弱引用：" + Arrays.toString(weakReference.get()));
-        System.out.println("调用GC前引用队列：" + referenceQueue.poll());
+        // 构造一个强引用
+        Object obj = new Object();
+        // 创建引用队列
+        ReferenceQueue<Object> referenceQueue = new ReferenceQueue<>();
+        // 利用强引用和引用队列构造弱引用
+        WeakReference<Object> weakReference = new WeakReference<>(obj, referenceQueue);
+        System.out.println("调用GC前弱引用：" + weakReference.get()); // java.lang.Object@6108b2d7
+        System.out.println("调用GC前引用队列：" + referenceQueue.poll()); // null
 
+        // 将强引用手动置null
+        obj = null;
         // 手动GC或虚拟机自动GC都会回收弱引用，这里手动调用GC
         System.gc();
 
-        System.out.println("调用GC后弱引用：" + Arrays.toString(weakReference.get()));
-        System.out.println("调用GC后引用队列：" + referenceQueue.poll());
+        System.out.println("调用GC后弱引用：" + weakReference.get()); // null
+        System.out.println("调用GC后引用队列：" + referenceQueue.poll()); // java.lang.Object@6108b2d7
     }
 }
