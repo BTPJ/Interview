@@ -1,6 +1,5 @@
 package thread_pool;
 
-import sun.nio.ch.ThreadPool;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -30,9 +29,9 @@ public class ThreadPoolExecutorDemo {
             int finalI = i;
             threadPoolExecutor.execute(() -> {
                 try {
-                    System.out.println("当前执行线程：" + finalI);
+                    System.out.println("线程：" + finalI + "开始执行");
                     Thread.sleep(1000);
-                    System.out.print("-------------");
+                    System.out.println("线程：" + finalI + "执行完毕");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
