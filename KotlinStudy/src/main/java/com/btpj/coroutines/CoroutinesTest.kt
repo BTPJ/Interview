@@ -20,10 +20,10 @@ class CoroutinesTest {
         fun main(args: Array<String>) {
             runBlocking {
                 val startTime = System.currentTimeMillis()
-                start10WCoroutines()
+//                start10WCoroutines()
 //                start10WThread()
 //                start10WJobByExecutor()
-//                start10WLaunchForCustomExecutor()
+                start10WLaunchForCustomExecutor()
                 println("耗时：${System.currentTimeMillis() - startTime}")
             }
         }
@@ -62,6 +62,7 @@ class CoroutinesTest {
                     delay(100)
                 }
             }
+            coroutineDispatcher.close()
         }
     }
 }

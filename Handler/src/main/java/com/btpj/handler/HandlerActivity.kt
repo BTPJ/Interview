@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.*
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.btpj.lib_base.base.BaseActivity
 import com.btpj.lib_base.utils.LogUtil
@@ -51,7 +52,8 @@ class HandlerActivity : BaseActivity(R.layout.activity_handler) {
         findViewById<Button>(R.id.btn_start).setOnClickListener {
 //            startWork()
 //            MyThread().start()
-            MyThread2().start()
+            MyThread1().start()
+//            MyThread2().start()
 //            SystemClock.sleep(50000)
         }
 
@@ -79,6 +81,18 @@ class HandlerActivity : BaseActivity(R.layout.activity_handler) {
             val obtainMessage =
                 myHandler.obtainMessage(2, "子线程中的handler向主线程的Looper（即MainLooper）发消息")
             myHandler.sendMessage(obtainMessage)
+        }
+    }
+
+    inner class MyThread1 : Thread() {
+        override fun run() {
+            super.run()
+            val myHandler = Handler(mainLooper)
+
+            myHandler.postDelayed({
+                Toast.makeText(this@HandlerActivity, "哈哈", Toast.LENGTH_LONG).show()
+                LogUtil.d("LTP", currentThread().name)
+            }, 2000)
         }
     }
 
