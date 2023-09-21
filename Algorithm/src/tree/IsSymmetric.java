@@ -5,7 +5,7 @@ import tree.base.TreeNode;
 /**
  * 对称二叉树
  * 给你一个二叉树的根节点 root ， 检查它是否轴对称。
- * 链接：<a href="https://leetcode.cn/problems/symmetric-tree/?envType=study-plan&id=shu-ju-jie-gou-ru-men&plan=data-structures&plan_progress=xhd088o3">...</a>
+ * 链接：<a href="https://leetcode.cn/problems/symmetric-tree/">...</a>
  *
  * @author BTPJ  2023/3/23
  */
