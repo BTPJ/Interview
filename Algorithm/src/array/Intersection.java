@@ -25,7 +25,7 @@ public class Intersection {
     }
 
     /**
-     * 求两个数组的交集
+     * 求两个数组的交集（无序/有序均可）
      *
      * @param nums1 数组1
      * @param nums2 数组2

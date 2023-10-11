@@ -54,9 +54,8 @@ public class HasCycle {
         ListNode lowPoint = head;
         ListNode fastPoint = head.next;
         while (fastPoint != null && fastPoint.next != null) {
-            if (fastPoint == lowPoint) {
-                return true;
-            }
+            if (fastPoint == lowPoint) return true;
+            
             fastPoint = fastPoint.next.next;
             lowPoint = lowPoint.next;
         }

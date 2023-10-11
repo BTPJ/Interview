@@ -16,6 +16,11 @@ public class MaxDepth {
         System.out.println("二叉树的最大深度：" + maxDepth(tree));
     }
 
+    /**
+     * 最大深度
+     * @param root
+     * @return
+     */
     private static int maxDepth(TreeNode root) {
         if (root == null) return 0;
 

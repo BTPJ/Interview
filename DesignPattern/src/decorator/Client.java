@@ -17,7 +17,7 @@ public class Client {
         System.out.println("---------------------------------");
 
         // 穿Nike
-        PersonDecorator decorator2 = new NikeDecorator(person);
-        decorator2.dressed();
+        decorator = new NikeDecorator(person);
+        decorator.dressed();
     }
 }

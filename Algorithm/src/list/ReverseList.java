@@ -27,13 +27,13 @@ public class ReverseList {
         // 当前节点
         ListNode cur = head;
         while (cur != null) {
-            // 记录当前节点的下一个节点
-            ListNode next = cur.next;
+            // 暂存当前节点的下一个节点
+            ListNode temp = cur.next;
             // 然后将当前节点指向pre
             cur.next = pre;
             // pre和cur节点都前进一位
             pre = cur;
-            cur = next;
+            cur = temp;
         }
         return pre;
     }

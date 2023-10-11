@@ -11,7 +11,7 @@ import tree.base.TreeNode;
 public class MinDepth {
 
     public static void main(String[] args) {
-        Integer[] arr = {3, 9, 20, null, null, 15, 7};
+        Integer[] arr = {2,null,3,null,4,null,5,null,6};
         TreeNode tree = CreateTreeNode.array2Tree(arr);
         System.out.println("二叉树的最小深度：" + minDepth(tree));
     }
@@ -19,18 +19,18 @@ public class MinDepth {
     private static int minDepth(TreeNode root) {
         if (root == null) return 0;
 
+        if(root.left == null && root.right == null) return 1;
+        
         // 存放左右子树最小高度，故赋值为最大int，使得比较之后能替换成较小值
         int minDepth = Integer.MAX_VALUE;
-
-        if (minDepth(root.left) < minDepth) {
-            minDepth = minDepth(root.left);
+        if(root.left != null){ 
+           minDepth = Math.min(minDepth(root.left), minDepth);
+        }
+        
+         if(root.right != null){ 
+           minDepth = Math.min(minDepth(root.right), minDepth);
         }
 
-        if (minDepth(root.right) < minDepth) {
-            minDepth = minDepth(root.right);
-        }
-
-        // 左右子树的最小深度 + 根结点
         return minDepth + 1;
     }
 }
