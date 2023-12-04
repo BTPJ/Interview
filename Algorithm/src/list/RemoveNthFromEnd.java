@@ -7,22 +7,23 @@ import java.util.ArrayDeque;
 /**
  * 删除链表的倒数第 k 个结点
  * <p>
- * 给定一个链表，删除链表的倒数第  k  个节点，并且返回链表的头结点
+ * 给定一个链表，删除链表的倒数第 k 个节点，并且返回链表的头结点
  * 示例：给定一个链表: 1->2->3->4->5, 和 k = 2.
  * 当删除了倒数第二个节点后，链表变为 1->2->3->5
- * 链接：<a href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list"/>
+ * 链接：<a href=
+ * "https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list"/>
  *
- * @author BTPJ  2020/12/3
+ * @author BTPJ 2020/12/3
  */
 public class RemoveNthFromEnd {
 
     public static void main(String[] args) {
-        int[] arr = {4, 5, 1, 9, 1, 3};
+        int[] arr = { 1, 2 };
         ListNode head = ListNode.list2ListNode(arr);
         System.out.println(ListNode.listNode2String(head));
-//        System.out.println(ListNode.listNode2String(removeNthFromEnd(head, 2)));
-//        System.out.println(ListNode.listNode2String(removeNthFromEnd2(head, 2)));
-        System.out.println(ListNode.listNode2String(removeNthFromEnd3(head, 2)));
+        // System.out.println(ListNode.listNode2String(removeNthFromEnd(head, 2)));
+        System.out.println(ListNode.listNode2String(removeNthFromEnd2(head, 2)));
+        // System.out.println(ListNode.listNode2String(removeNthFromEnd3(head, 2)));
     }
 
     /**
@@ -71,8 +72,10 @@ public class RemoveNthFromEnd {
      * @return 新链表
      */
     public static ListNode removeNthFromEnd2(ListNode head, int n) {
+        // 临时链表,头节点指向head
+        ListNode temp = new ListNode(0, head);
         // 双指针相隔N，进行遍历
-        ListNode pre = head, after = head, newListNode = new ListNode(0, head);
+        ListNode pre = temp, after = temp;
         int index = 0;
         while (pre.next != null) {
             pre = pre.next;
@@ -84,7 +87,7 @@ public class RemoveNthFromEnd {
         }
         // 将后节点的下一个节点指向下下个节点
         after.next = after.next.next;
-        return newListNode.next;
+        return temp.next;
     }
 
     /**

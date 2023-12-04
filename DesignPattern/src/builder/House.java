@@ -55,19 +55,18 @@ public class House {
          * @return House对象
          */
         public House build() {
-            if (mHouse.foundation == null) {
-                mHouse.foundation = new Object();
-            }
-            if (mHouse.frame == null) {
-                mHouse.frame = new Object();
-            }
-            if (mHouse.door == null && mHouse.window != null) {
-                mHouse.door = new Object();
-            }
-            if (mHouse.door != null && mHouse.window == null) {
-                mHouse.window = new Object();
+            if (mHouse.frame != null && mHouse.foundation == null) {
+                mHouse.foundation = new Foundation();
             }
             return mHouse;
         }
     }
+
+    new Builder()
+            .setDoor(new Door())
+            .setWindow(new Window())
+            .setFoundation(new Doundation())
+            .setFrame(new Frame())
+            .setToilet(new Toilet())
+            .build();
 }

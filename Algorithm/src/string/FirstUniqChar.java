@@ -11,7 +11,7 @@ import java.util.*;
  */
 public class FirstUniqChar {
     public static void main(String[] args) {
-        System.out.println(firstUniqChar("loveleetcode"));
+        System.out.println(firstUniqChar("loveleetcode")); 
         System.out.println(firstUniqChar2("loveleetcode"));
     }
 

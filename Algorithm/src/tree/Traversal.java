@@ -9,17 +9,21 @@ import java.util.Queue;
 
 /**
  * 二叉树的遍历
- * 前序遍历： <a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/"/>
- * 中序遍历：<a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/"/>
- * 后序遍历：<a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/">
- * 序列化二叉树：<a href="https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/"/>
+ * 前序遍历：
+ * <a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/"/>
+ * 中序遍历：<a href=
+ * "https://leetcode-cn.com/problems/binary-tree-inorder-traversal/"/>
+ * 后序遍历：<a href=
+ * "https://leetcode-cn.com/problems/binary-tree-postorder-traversal/">
+ * 序列化二叉树：<a href=
+ * "https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/"/>
  *
- * @author BTPJ  2021/6/8
+ * @author BTPJ 2021/6/8
  */
 public class Traversal {
 
     public static void main(String[] args) {
-        Integer[] arr = {3, 9, 20, null, null, 15, 7};
+        Integer[] arr = { 3, 9, 20, null, null, 15, 7 };
         TreeNode tree = CreateTreeNode.array2Tree(arr);
 
         StringBuilder sb = new StringBuilder();
@@ -60,10 +64,11 @@ public class Traversal {
      * 前序递归
      *
      * @param root TreeNode
-     * @param list  List
+     * @param list List
      */
     private static void preorder(TreeNode root, List<Integer> list) {
-        if (root == null) return;
+        if (root == null)
+            return;
 
         list.add(root.val);
         preorder(root.left, list);
@@ -86,10 +91,11 @@ public class Traversal {
      * 中序递归
      *
      * @param root TreeNode
-     * @param list  List
+     * @param list List
      */
     private static void inorder(TreeNode root, List<Integer> list) {
-        if (root == null) return;
+        if (root == null)
+            return;
 
         inorder(root.left, list);
         list.add(root.val);
@@ -112,13 +118,50 @@ public class Traversal {
      * 后序递归
      *
      * @param root TreeNode
-     * @param list  List
+     * @param list List
      */
     private static void postorder(TreeNode root, List<Integer> list) {
-        if (root == null) return;
+        if (root == null)
+            return;
 
         postorder(root.left, list);
         postorder(root.right, list);
         list.add(root.val);
+    }
+
+    /**
+     * 二叉树的层序遍历，返回一个包含所有节点值的列表，每个子列表代表一层。
+     * 
+     * @param root 二叉树的根节点
+     * @return 包含所有节点值的列表，每个子列表代表一层
+     */
+    private List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> list = new ArrayList<>();
+        if (root == null) return list;
+
+        // 队列，用于存储待遍历的节点
+        Queue<TreeNode> queue = new LinkedList<>();
+        // 将根节点加入队列
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            // 当前层的节点值列表
+            List<Integer> level = new ArrayList<>();
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                level.add(node.val);
+                if (node.left != null) {
+                    // 如果左子节点不为空，将其加入队列
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    // 如果右子节点不为空，将其加入队列
+                    queue.offer(node.right);
+                }
+
+            }
+            list.add(level);
+        }
+        return list;
     }
 }

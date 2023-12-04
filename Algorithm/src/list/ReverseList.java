@@ -6,14 +6,14 @@ import list.base.ListNode;
  * 反转链表
  * <a href="https://leetcode-cn.com/problems/reverse-linked-list/"/>
  *
- * @author BTPJ  2021/6/10
+ * @author BTPJ 2021/6/10
  */
 public class ReverseList {
 
     public static void main(String[] args) {
-        int[] arr = {4, 5, 1, 9, 1, 3};
+        int[] arr = { 4, 5, 1, 9, 1, 3 };
         ListNode node = ListNode.list2ListNode(arr);
-        System.out.println(ListNode.listNode2String(reverseList2(node)));
+        System.out.println(ListNode.listNode2String(reverseList(node)));
     }
 
     /**
@@ -23,17 +23,17 @@ public class ReverseList {
      * @return 反转后的新链表
      */
     public static ListNode reverseList(ListNode head) {
-        ListNode pre = null;
-        // 当前节点
-        ListNode cur = head;
+        // 初始化两个指针pre和cur,分别指向当前节点的前一个节点和当前节点
+        ListNode pre = null, cur = head;
         while (cur != null) {
-            // 暂存当前节点的下一个节点
-            ListNode temp = cur.next;
-            // 然后将当前节点指向pre
+            // 缓存下一个节点到变量next中
+            ListNode next = cur.next;
+            // 将当前节点的next指针指向pre指针所指向的节点
             cur.next = pre;
-            // pre和cur节点都前进一位
+            // 将pre指针向后移动一个节点
             pre = cur;
-            cur = temp;
+            // 将cur指针向后移动一个节点
+            cur = next;
         }
         return pre;
     }
