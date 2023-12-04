@@ -56,17 +56,9 @@ public class House {
          */
         public House build() {
             if (mHouse.frame != null && mHouse.foundation == null) {
-                mHouse.foundation = new Foundation();
+                mHouse.foundation = new Object();
             }
             return mHouse;
         }
     }
-
-    new Builder()
-            .setDoor(new Door())
-            .setWindow(new Window())
-            .setFoundation(new Doundation())
-            .setFrame(new Frame())
-            .setToilet(new Toilet())
-            .build();
 }
