@@ -3,7 +3,7 @@ package tree;
 import tree.base.TreeNode;
 
 /**
- * 给定一个二叉树，找出其最小深度
+ * 给定一个二叉树，找出其最小深度（最小深度是从根节点到最近叶子节点的最短路径上的节点数量。）
  * <a href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/"/>
  *
  * @author BTPJ 2021/6/9
@@ -18,21 +18,17 @@ public class MinDepth {
 
     private static int minDepth(TreeNode root) {
         if (root == null) return 0;
+        
+        int leftMin = minDepth(root.left);
+        int rightMin = minDepth(root.right);
 
-         // 存放左右子树最小高度，故赋值为最大int，使得比较之后能替换成较小值
-        int minDepth = Integer.MAX_VALUE;
-        // 主要是防止均为null时下面的赋值都不成立，最后minDepth为Integer.MAX_VALUE
-        if (root.left == null || root.right == null) return 1;
+        // 左子节点为空时，取右测节点最小 + 1 
+        if (root.left ==null) return rightMin + 1;
 
-        if (root.left != null) {
-            minDepth = Math.min(minDepth, minDepth(root.left));
-        }
-
-        if (root.right != null) {
-            minDepth = Math.min(minDepth, minDepth(root.right));
-        }
+        //  右子节点为空时，取左侧节点最小 + 1 
+        if (root.right ==null) return leftMin + 1;
 
         // 加上根节点
-        return minDepth + 1;
+        return Math.min(leftMin, rightMin) + 1;
     }
 }

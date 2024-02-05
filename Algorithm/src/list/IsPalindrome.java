@@ -9,12 +9,12 @@ import java.util.List;
  * 回文链表：链表与其反转链表相同
  * <a href="https://leetcode-cn.com/problems/palindrome-linked-list/"/>
  *
- * @author BTPJ  2021/6/10
+ * @author BTPJ 2021/6/10
  */
 public class IsPalindrome {
 
     public static void main(String[] args) {
-        int[] arr = {4, 5, 1, 9, 1, 3};
+        int[] arr = { 4, 5, 1, 9, 1, 3 };
         ListNode node = ListNode.list2ListNode(arr);
         System.out.println(isPalindrome(node) ? "是回文链表" : "不是回文链表");
     }
@@ -35,15 +35,11 @@ public class IsPalindrome {
             currentNode = currentNode.next;
         }
 
-        // 使用双指针判断是否回文
-        int front = 0;
-        int back = list.size() - 1;
-        while (front < back) {
-            if (!list.get(front).equals(list.get(back))) {
-                return false;
-            }
-            front++;
-            back--;
+        int length = list.size();
+        // 只需要遍历链表的前一半元素
+        for (int i = 0; i < length / 2; i++) {
+            // 如果前一半元素和后一半对应位置的元素不相等，说明链表不是回文链表
+            if (list.get(i) != list.get(length - 1 - i)) return false;
         }
         return true;
     }
